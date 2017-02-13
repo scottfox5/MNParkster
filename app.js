@@ -44,6 +44,6 @@ app.use('/auth', auth);
 app.use('/private', isLoggedIn, private);
 app.use('/', index);
 /** ---------- SERVER START ---------- **/
-app.listen(3000, function () {
-  console.log('Now running on port ', 3000);
+app.listen(5555, function () {
+  console.log('Now running on port ', 5555);
 });

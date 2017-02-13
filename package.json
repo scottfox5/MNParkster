@@ -1,7 +1,7 @@
 {
-  "name": "prime_google_mean_auth",
+  "name": "mn_park_journal",
   "version": "1.0.0",
-  "description": "Update to a scotch.io tutorial Easy Node Authentication:Google",
+  "description": "app to journal experiences in mn state parks and track parks visited",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -14,16 +14,24 @@
     "javascript",
     "express"
   ],
-  "author": "antoinette@primeacademy.io",
+  "author": "scottfox5@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.15.0",
-    "express": "^4.13.4",
-    "express-session": "^1.13.0",
-    "mongoose": "^4.4.7",
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "express-session": "^1.15.1",
+    "mongoose": "^4.8.2",
     "passport": "^0.3.2",
     "passport-google": "^0.3.0",
     "passport-google-oauth": "^1.0.0",
     "passport-google-oauth2": "^0.1.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scottfox5/prime_sp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/scottfox5/prime_sp/issues"
+  },
+  "homepage": "https://github.com/scottfox5/prime_sp#readme"
 }
