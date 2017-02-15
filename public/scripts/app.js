@@ -1,20 +1,22 @@
-var googleAuthApp = angular.module('theGoogles', ['ngRoute']);
+var googleAuthApp = angular.module('parkJournalApp', ['ngRoute']);
 
-googleAuthApp.config(['$routeProvider', function ($routeProvider) {
+  googleAuthApp.config(['$routeProvider', function ($routeProvider) {
 
-  $routeProvider
-    .when('/calendar', {
-      templateUrl: '/public/views/templates/calendar.html',
-      controller: 'CalendarController',
-      controllerAs: 'calendar',
-    })
-    .when('/login', {
-      templateUrl: '/public/views/templates/login.html',
-      controller: 'AuthController',
-      controllerAs: 'auth',
-    })
-    .otherwise({
-      redirectTo: 'login',
-    });
-},
+    $routeProvider
+      .when('/journal', {
+        templateUrl: '/public/views/journal.html',
+        controller: 'JournalController',
+        controllerAs: 'journal',
+      })
+      .when('/login', {
+        templateUrl: '/public/views/login.html',
+        controller: 'AuthController',
+        controllerAs: 'auth',
+      })
+      .otherwise({
+        redirectTo: 'login',
+      });
+  },
+
+
 ]);

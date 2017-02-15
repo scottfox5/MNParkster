@@ -1,15 +1,4 @@
-/**
- * We configure our instance of passport in this file.
- * We must specify:
- * (1) How the user will be serialized (i.e., what data will be made
- * available in a session)
- * (2) How the user will be deserialized (i.e., how do we find the user based
- * on the data available in our session)
- *
- * In addition, we define our authentication strategy in this file.
- *
- * @module auth/passport
- */
+
  /** ---------- REQUIRE NODE MODULES ---------- **/
 var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth2').Strategy;
@@ -61,11 +50,9 @@ passport.use('google', new GoogleStrategy({
           if (err) {
             return done(err);
           }
-
           return done(null, user);
         });
     });
-
 }));
 
 module.exports = passport;

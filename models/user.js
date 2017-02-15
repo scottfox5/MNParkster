@@ -1,8 +1,3 @@
-/**
- * User schema for Mongoose.
- *
- * @module models/user
- */
 var mongoose = require('mongoose');
 
 var userSchema = mongoose.Schema({
@@ -10,6 +5,13 @@ var userSchema = mongoose.Schema({
   googleToken: String,
   googleEmail: String,
   googleName: String,
+  journal: [
+	   { park: String,
+		date: Date,
+		notes: String}
+	]
 });
 
-module.exports = mongoose.model('User', userSchema);
+var User = mongoose.model('User', userSchema);
+
+module.exports = User;
