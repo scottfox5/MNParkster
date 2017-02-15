@@ -15,17 +15,42 @@ router.get('/', function (req, res) {
 
 router.post('/', function (req, res) {
   console.log('post req.body:', req.body);
-  var userjournal = new UserJournal(req.body);
-  console.log('posting user journal:', userjournal);
-  userjournal.save(function (err) {
-    if (err) {
-      console.log('Error saving', err);
-      res.sendStatus(500);
-      return;
-    }
-    res.sendStatus(201);
-  });
+  var userJournalEntry = req.body;
+  var user = req.user;
+  console.log('posting user journal:', userJournalEntry, "user:", user);
+  UserJournal.findByIdAndUpdate(
+          user._id,
+          {$push: {"journal": userJournalEntry}},
+          {safe: true, upsert: true, new : true},
+          function (err) {
+            if (err) {
+              console.log('Error saving', err);
+              res.sendStatus(500);
+              return;
+            }
+            res.sendStatus(201);
+          }
+      )
 }); // end of post
+
+
+//////// IT WORKS!!!!!!
+// router.post('/', function (req, res) {
+//   console.log('post req.body:', req.body);
+//   var userJournalEntry = req.body;
+//   var user = req.user;
+//   console.log('posting user journal:', userJournalEntry, "user:", user);
+//   UserJournal.findByIdAndUpdate(
+//           user._id,
+//           {$push: {"journal": userJournalEntry}},
+//           {safe: true, upsert: true, new : true},
+//           function(err, model) {
+//               console.log(err);
+//           }
+//       )
+// }); // end of post
+
+
 
 router.put('/:id', function (req, res) {
   var id = req.params.id;

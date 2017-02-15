@@ -9,7 +9,7 @@ googleAuthApp.service('JournalService', function ($http) { // service is linked 
       console.log("Error getting user journal", err);
     });
   };
-  
+
   this.addJournalEntry = function(journalEntry) { // function that begins post request
     console.log('add journal entry:', journalEntry) // person is object to add to database
     return $http.post("/private/journal", journalEntry) // short-hand post request, takes _ and person object
