@@ -53,7 +53,7 @@ vm.data = '';
     JournalService.updateJournalEntry(id, data) // sending inforamtion to service to then make put request
     .then(function(){
       console.log('updated journal entry', data);
-      // vm.getUserJournal(); // running get people function to update info for the display
+      vm.getUserJournal(); // running get people function to update info for the display
     }).catch(function(err){
       console.log('error updating journal entry', err)
     });

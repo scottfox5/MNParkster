@@ -33,39 +33,13 @@ router.post('/', function (req, res) {
       )
 }); // end of post
 
-// error handling of code found on stack overflow
-// function(err, model) {
-//     console.log(err);
-// }
-
-// router.put('/:id', function (req, res) {
-//   var id = req.params.id;
-//   var journalUpdate = req.body
-//   var user = req.user
-//   console.log('document id:', id, 'journal update:', journalUpdate);
-//   UserJournal.findByIdAndUpdate(id, {$set: {park: journalUpdate.park}}, {new: true}, function (err, journal) {
-//       if (err) {
-//         res.sendStatus(500);
-//         return;
-//       }
-//       res.send(journal).status(204);
-//       })
-//   });
-// // }); // end of put
-
-// Tank.findByIdAndUpdate(id, { $set: { size: 'large' }}, { new: true }, function (err, tank) {
-//   if (err) return handleError(err);
-//   res.send(tank);
-// });
-
 router.put('/:id', function (req, res) {
   var userId = req.user._id;
-  var journalId = req.params.id;
+  var journalEntryId = req.params.id;
   var journalUpdate = req.body;
-  console.log(req.user.journal[0].notes)
-  console.log('user id:', userId, 'document id:', journalId, 'journal update:', journalUpdate);
+  console.log('user id:', userId, 'document id:', journalEntryId, 'journal update:', journalUpdate);
   UserJournal.findOneAndUpdate(
-    { "_id": userId, "journal._id": journalId },
+    { "_id": userId, "journal._id": journalEntryId },
     { "$set": { "journal.$": journalUpdate}
     },
     function (err) {
@@ -77,42 +51,20 @@ router.put('/:id', function (req, res) {
   });
 }); // end of put
 
-// Folder.findOneAndUpdate(
-//     { "_id": folderId, "permissions._id": permission._id },
-//     {
-//         "$set": {
-//             "permissions.$": permission
-//         }
-//     },
-//     function(err,doc) {
-//
-//     }
-// );
-
-// /// Almost Works!!!!!
-// router.put('/:id', function (req, res) {
-//   var id = req.params.id;
-//   var journalUpdate = req.body
-//   console.log('document id:', id, 'journal update:', journalUpdate);
-//   UserJournal.findByIdAndUpdate(id, journalUpdate, function (err) {
-//       if (err) {
-//         res.sendStatus(500);
-//         return;
-//       }
-//       res.sendStatus(204);
-//   });
-// }); // end of put
-
 router.delete('/:id', function (req, res) {
-  var id = req.params.id;
-  console.log('id received', id);
-  UserJournal.findByIdAndRemove(id, function (err) {
+  var journalEntryId = req.params.id;
+  var userId = req.user._id;
+  console.log('user id:', userId, 'journal entry id:', journalEntryId);
+  UserJournal.findById(userId, function(err, user){
+    user.journal.id(journalEntryId).remove();
+    user.save(function(err){
       if (err) {
         res.sendStatus(500);
         return;
       }
       res.sendStatus(204);
+    });
   });
-}); // end of delete
+});// end of delete
 
 module.exports = router;
