@@ -38,7 +38,7 @@ vm.data = '';
   vm.deleteJournalEntry = function(id){
     JournalService.deleteJournalEntry(id)
     .then(function(){
-    console.log('deleted journal entry:' id);
+    console.log('deleted journal entry:', id);
     vm.getUserJournal();
     }).catch(function(err){
     console.log('error deleting journal entry', err)
