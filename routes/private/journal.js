@@ -3,7 +3,6 @@ var router = express.Router();
 var UserJournal = require('../../models/user');
 
 router.get('/', function (req, res) {
-  // console.log("current user, journal route", req.user);
   UserJournal.find({"_id" : req.user._id}, function (err, userjournalEntries) {
     if (err) {
       res.sendStatus(500);
@@ -21,7 +20,6 @@ router.post('/', function (req, res) {
   UserJournal.findByIdAndUpdate(
           user._id,
           {$push: {"journal": userJournalEntry}},
-          {safe: true, upsert: true, new : true},
           function (err) {
             if (err) {
               console.log('Error saving', err);

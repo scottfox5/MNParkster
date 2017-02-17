@@ -10,6 +10,8 @@
     <script src="/public/scripts/controllers/navController.js"></script>
     <script src="/public/scripts/controllers/authController.js"></script>
     <script src="/public/scripts/controllers/journalController.js"></script>
+    <script src="/public/scripts/controllers/checklistController.js"></script>
+    <script src="/public/scripts/services/checklistService.js"></script>
     <link rel="stylesheet" type="text/css" href="/public/vendors/normalize.css" />
     <script src="/public/vendors/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/public/vendors/sweetalert.css">
@@ -24,9 +26,10 @@
         <h1>MN Parks Online Journal</h1>
         <nav class="nav">
           <ul class="nav navbar-nav">
-            <li class=""><a href="#home">Home</a></li>
-            <li class="" ng-show="nc.displayLogout"><a href="#journal">Journal</a></p>
-            <li id="userWelcome" ng-show="nc.displayLogout">Welcome {{nc.username}}!</li>
+            <!-- <li class=""><a href="#home">Home</a></li> -->
+            <li id="userWelcome" ng-show="nc.displayLogout">Welcome {{nc.username}}</li>
+            <li class="" ng-show="nc.displayLogout"><a href="#journal">My Journal</a></p>
+            <li class="" ng-show="nc.displayLogout"><a href="#checklist">My Park Checklist</a></p>
             <li class="" ng-show="nc.displayLogout"><a href="#" ng-click="nc.logout()">Logout</a></li>
           </ul>
         </nav>

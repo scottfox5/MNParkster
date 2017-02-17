@@ -1,0 +1,12 @@
+<h2>Park Checklist</h2>
+<div class="table-responsive row">
+  <table id="checklist" class="table-hover table-bordered col-sm-12">
+    <thead>
+      <th>Parks Visited</th>
+    </thead>
+    <p>You have visited {{cc.parkList.length}} of the 67 State Parks</p>
+    <tbody id='table-body' ng-repeat="parks in cc.parkList">
+      <td ng-model="parks">{{parks}}</td>
+    </tbody>
+  </table>
+</div>

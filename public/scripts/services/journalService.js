@@ -2,7 +2,7 @@ googleAuthApp.service('JournalService', function ($http) {
 
   this.getUserJournal = function() {
     return $http.get("/private/journal").then(function(response) {
-      console.log('getting user journal:', response, response.data) 
+      console.log('getting user journal:', response, response.data)
       return response.data;
     }).catch(function(err) {
       console.log("Error getting user journal", err);
