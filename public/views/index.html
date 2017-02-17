@@ -14,6 +14,7 @@
     <script src="/public/vendors/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/public/vendors/sweetalert.css">
     <link rel="stylesheet" type="text/css" href="/public/vendors/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/public/styles/stylesheet.css" />
   </head>
   <body>
     <!-- Bring in the Angular app -->
@@ -21,11 +22,12 @@
       <!-- NavController is on every page -->
       <header ng-controller="NavController as nc">
         <h1>MN Parks Online Journal</h1>
-        <nav>
-          <ul class="row">
-            <li class="two columns"><a href="#home">Home</a></li>
-            <li class="two columns"><a href="#journal">Journal</a></li>
-            <li class="six columns" ng-show="nc.displayLogout">Welcome {{nc.username}}! | <a href="#" ng-click="nc.logout()">Logout</a></li>
+        <nav class="nav">
+          <ul class="nav navbar-nav">
+            <li class=""><a href="#home">Home</a></li>
+            <li class="" ng-show="nc.displayLogout"><a href="#journal">Journal</a></p>
+            <li id="userWelcome" ng-show="nc.displayLogout">Welcome {{nc.username}}!</li>
+            <li class="" ng-show="nc.displayLogout"><a href="#" ng-click="nc.logout()">Logout</a></li>
           </ul>
         </nav>
         <!-- Show a helpful message when needed -->

@@ -1,0 +1,16 @@
+body {
+  text-align: center;
+}
+
+#userWelcome {
+  padding: 15px 0 15px;
+}
+
+#journalEntry {
+  margin: 40px 0 0 0;
+  border: 1px solid gray;
+}
+
+#myJournal {
+  margin: 50px;
+}

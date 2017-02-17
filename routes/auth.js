@@ -5,7 +5,6 @@ var passport = require('../auth/passport');
 router.get('/google', passport.authenticate('google',
   {
     scope: ['openid', 'email'],
-    // , 'https://www.googleapis.com/auth/calendar'
     prompt: 'select_account',
   })
 );

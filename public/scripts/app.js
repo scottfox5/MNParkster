@@ -6,7 +6,7 @@ var googleAuthApp = angular.module('parkJournalApp', ['ngRoute']);
       .when('/journal', {
         templateUrl: '/public/views/journal.html',
         controller: 'JournalController',
-        controllerAs: 'journal',
+        controllerAs: 'jc',
       })
       .when('/login', {
         templateUrl: '/public/views/login.html',

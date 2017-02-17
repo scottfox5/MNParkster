@@ -40,8 +40,7 @@ router.put('/:id', function (req, res) {
   console.log('user id:', userId, 'document id:', journalEntryId, 'journal update:', journalUpdate);
   UserJournal.findOneAndUpdate(
     { "_id": userId, "journal._id": journalEntryId },
-    { "$set": { "journal.$": journalUpdate}
-    },
+    { "$set": { "journal.$": journalUpdate}},
     function (err) {
       if (err) {
         res.sendStatus(500);
