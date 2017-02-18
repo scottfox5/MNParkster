@@ -1,0 +1,31 @@
+<h2>My Journal</h2>
+<div id="myJournal">
+  <div id="journalSort">
+    <label>Sort Journal: </label>
+    <select ng-model="jc.sortBy" ng-dropdown>
+          <option ng-option value="park">Park</option>
+          <option ng-option value="date">Date</option>
+    </select>
+  </div>
+
+  <div id="journalEntry" ng-repeat="journalEntry in jc.journalList | orderBy: jc.sortBy">
+    <div class="row">
+      <div class="col-sm-6">
+        <p ng-model="journalEntry.park">{{journalEntry.park}}</p>
+      </div>
+      <div class="col-sm-6">
+        <p ng-model="journalEntry.date"/>{{journalEntry.date | date:'fullDate'}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <input class="form-control" type="text" id="notes" name="notes" value="{{journalEntry.notes}}" ng-model="journalEntry.notes" />
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <button class="btn btn-info" ng-click="jc.updateJournalEntry(journalEntry._id, jc.journalList[$index])">Update</button>
+          <button class="btn btn-warning" ng-click="jc.deleteJournalEntry(journalEntry._id, journalEntry.park)">Delete</button>          </div>
+      </div>
+    </div>
+  </div>
+</div>

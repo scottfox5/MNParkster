@@ -1,5 +1,5 @@
 googleAuthApp.controller('JournalController', function (JournalService) {
-console.log('journal controller connected');
+console.log('Journal Controller Connected');
 var vm = this;
 vm.journalList = [];
 vm.data = '';
@@ -7,7 +7,7 @@ vm.data = '';
   vm.getUserJournal = function(){ //
     JournalService.getUserJournal().then(function(response){
       console.log('got user data:', response)
-      vm.journalList = response[0].journal;
+      vm.journalList = response;
     }).catch(function(err){
       console.log('error getting user journal', err)
     });
@@ -21,6 +21,7 @@ vm.data = '';
     }).catch(function(err){
       console.log('error adding journal entry', err)
     });
+    swal("Dope!", journalEntry.park+" State Park sounds like heaven on earth!", "success")
     vm.journalEntry = {};
     vm.getUserJournal();
   }; // end of addJournalEntry
@@ -30,20 +31,54 @@ vm.data = '';
     .then(function(){
       console.log('updated journal entry', data);
       vm.getUserJournal();
+      swal("Groovy", "You succesfully updated your journal entry.", "success")
     }).catch(function(err){
       console.log('error updating journal entry', err)
     });
   }; // end of updateJournalEntry
 
-  vm.deleteJournalEntry = function(id){
+
+  vm.deleteJournalEntry = function(id, park){
     JournalService.deleteJournalEntry(id)
     .then(function(){
-    console.log('deleted journal entry:', id);
+    console.log('deleted journal entry:', id, park);
     vm.getUserJournal();
+    swal("Deleted!", "That trip to "+ park +" State Park sucked anyway.", "success")
     }).catch(function(err){
     console.log('error deleting journal entry', err)
     });
   }; // end of deleteJournalEntry
+
+// vm.confirmDelete(){
+//   swal({
+//   title: "Are you sure?",
+//   text: "You will not be able to recover this journal entry!",
+//   type: "warning",
+//   showCancelButton: true,
+//   confirmButtonClass: "btn-danger",
+//   confirmButtonText: "Yes, delete it!",
+//   cancelButtonText: "No, cancel please!",
+//   closeOnConfirm: false,
+//   closeOnCancel: false
+//   },
+//   function(isConfirm) {
+//     if (isConfirm) {
+//       vm.deleteJournalEntry = function(id){
+//         JournalService.deleteJournalEntry(id)
+//         .then(function(){
+//         console.log('deleted journal entry:', id);
+//         vm.getUserJournal();
+//         }).catch(function(err){
+//         console.log('error deleting journal entry', err)
+//         });
+//       }; // end of deleteJournalEntry
+//       swal("Deleted!", "It's gone forever.", "success");
+//     } else {
+//       swal("Cancelled", "Your journal entry is safe:)", "error");
+//     }
+//   });
+// };
+
 
 
 }); //end of controller

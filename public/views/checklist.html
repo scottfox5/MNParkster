@@ -3,10 +3,13 @@
   <table id="checklist" class="table-hover table-bordered col-sm-12">
     <thead>
       <th>Parks Visited</th>
+      <th>Number of Visits</th>
     </thead>
     <p>You have visited {{cc.parkList.length}} of the 67 State Parks</p>
     <tbody id='table-body' ng-repeat="parks in cc.parkList">
       <td ng-model="parks">{{parks}}</td>
+      <!-- TODO: display number of visits to that park  -->
+      <td ng-model="parks.length">{{parks.length}}</td>
     </tbody>
   </table>
 </div>

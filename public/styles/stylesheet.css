@@ -2,8 +2,18 @@ body {
   text-align: center;
 }
 
-#userWelcome {
+.nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+#username {
   padding: 15px 0 15px;
+}
+
+#googleLogin {
+  margin-top: 100px
 }
 
 #journalEntry {

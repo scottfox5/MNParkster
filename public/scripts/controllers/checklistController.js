@@ -1,8 +1,7 @@
 googleAuthApp.controller('ChecklistController', function (ChecklistService) {
-console.log('checklist controller connected');
+console.log('Checklist Controller');
 var vm = this;
 vm.parkList = [];
-vm.data = '';
 
   vm.getParks = function(){ //
     ChecklistService.getParks().then(function(response){
@@ -11,24 +10,6 @@ vm.data = '';
     }).catch(function(err){
       console.log('error getting user checklist', err)
     });
-  }; // end of getUserJournal
+  }; // end of getParks
   vm.getParks();
-
-  // googleAuthApp.filter('unique', function() {
-  //    return function(collection, keyname) {
-  //       var output = [],
-  //           keys = [];
-  //
-  //       angular.forEach(collection, function(item) {
-  //           var key = item[keyname];
-  //           if(keys.indexOf(key) === -1) {
-  //               keys.push(key);
-  //               output.push(item);
-  //           }
-  //       });
-  //
-  //       return output;
-  //    };
-  // });
-
 }); //end of controller

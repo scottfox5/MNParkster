@@ -1,10 +1,13 @@
-<!-- Consider this the main view -->
-
 <!-- Shown for users that are NOT logged in -->
-<section ng-hide="auth.loggedIn" >
-  <!-- I got this button image from Googles sign-in button brand guidelines page -->
+<section ng-hide="auth.loggedIn" id="googleLogin">
+  <!-- Button image is from Googles sign-in button brand guidelines page -->
   <a href= "/auth/google"><img src="/public/assets/btn_google_signin_dark_normal_web.png" /></a>
 </section>
-
 <!-- Shown for users that are logged in -->
-<!-- <section ng-show="auth.loggedIn"  ng-controller="NavController as nc">
+<section ng-show="auth.loggedIn"  ng-controller="NavController as nc">
+  <h3 id="userWelcome" ng-show="nc.displayLogout">Welcome {{nc.username}}</h3>
+</section>
+
+<section ng-show="auth.loggedIn" ngController="QuoteController as qc">
+  <h3 id="randomQuote" ng-model="qc.quote">Words of Inspiration: {{qc.quote}}</h3>
+</section>
