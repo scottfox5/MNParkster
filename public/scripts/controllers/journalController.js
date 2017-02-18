@@ -6,7 +6,7 @@ vm.data = '';
 
   vm.getUserJournal = function(){ //
     JournalService.getUserJournal().then(function(response){
-      console.log('got user data:', response)
+      // console.log('Got Journal Data:', response)
       vm.journalList = response;
     }).catch(function(err){
       console.log('error getting user journal', err)
@@ -15,7 +15,7 @@ vm.data = '';
   vm.getUserJournal();
 
   vm.addJournalEntry = function( journalEntry ){
-    console.log('Journal Entry to Add:', journalEntry);
+    // console.log('Journal Entry to Add:', journalEntry);
     JournalService.addJournalEntry(journalEntry)
     .then(function(response){
     }).catch(function(err){
@@ -29,7 +29,7 @@ vm.data = '';
   vm.updateJournalEntry = function(id, data){
     JournalService.updateJournalEntry(id, data)
     .then(function(){
-      console.log('updated journal entry', data);
+      // console.log('Updated Journal Entry', data);
       vm.getUserJournal();
       swal("Groovy", "You succesfully updated your journal entry.", "success")
     }).catch(function(err){
@@ -41,7 +41,7 @@ vm.data = '';
   vm.deleteJournalEntry = function(id, park){
     JournalService.deleteJournalEntry(id)
     .then(function(){
-    console.log('deleted journal entry:', id, park);
+    // console.log('Deleted Journal Entry:', id, park);
     vm.getUserJournal();
     swal("Deleted!", "That trip to "+ park +" State Park sucked anyway.", "success")
     }).catch(function(err){

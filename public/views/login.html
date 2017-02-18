@@ -4,10 +4,15 @@
   <a href= "/auth/google"><img src="/public/assets/btn_google_signin_dark_normal_web.png" /></a>
 </section>
 <!-- Shown for users that are logged in -->
-<section ng-show="auth.loggedIn"  ng-controller="NavController as nc">
-  <h3 id="userWelcome" ng-show="nc.displayLogout">Welcome {{nc.username}}</h3>
+<section  ng-controller="NavController as nc">
+  <!-- ng-show="auth.loggedIn"  -->
+  <section >
+    <!-- ngController="QuoteController as qc" -->
+    <h3 id="randomQuote" ng-show="nc.displayLogout" ng-model="nc.quote">{{nc.quote}}</h3>
+  </section>
 </section>
 
-<section ng-show="auth.loggedIn" ngController="QuoteController as qc">
+<!-- <section ngController="QuoteController as qc">
   <h3 id="randomQuote" ng-model="qc.quote">Words of Inspiration: {{qc.quote}}</h3>
-</section>
+</section> -->
+ <!-- ng-show="auth.loggedIn"  -->

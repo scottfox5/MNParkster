@@ -1,4 +1,5 @@
-googleAuthApp.controller('NavController', function (AuthFactory, $window) {
+googleAuthApp.controller('NavController', function (AuthFactory, $window, $http) {
+  console.log("NavController Connected");
   var vm = this;
   var authFactory = AuthFactory;
 
@@ -38,5 +39,18 @@ googleAuthApp.controller('NavController', function (AuthFactory, $window) {
         vm.message.type = 'error';
       });
   };
+
+  vm.getQuote = function() {
+    return $http.get("/private/quote").then(function(response) {
+      console.log('Quote Response:', response)
+      console.log('Quote:', response.data)
+      vm.quote = response.data;
+      return vm.quote;
+    }).catch(function(err) {
+      console.log("Error getting random quote", err);
+    });
+  }();
+  // vm.getQuote();
+
 
 });
