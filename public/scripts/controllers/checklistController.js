@@ -4,9 +4,9 @@ var vm = this;
 vm.parkList = [];
 
   vm.getParks = function(){ //
-    ChecklistService.getParks().then(function(response){
-      // console.log('Got parkList:', response)
-      vm.parkList = response;
+    ChecklistService.getParks().then(function(response, data){
+      console.log('Got ParkList:', response)
+      vm.checklist = response;
     }).catch(function(err){
       console.log('error getting user checklist', err)
     });

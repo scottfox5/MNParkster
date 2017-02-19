@@ -4,33 +4,34 @@ var UserJournal = require('../../models/user');
 
 router.get('/', function (req, res) {
   UserJournal.find({"_id" : req.user._id}, function (err, data) {
-    var data = data[0].journal;
-    console.log('journal:', data);
+    console.log('Journal:', data);
+    var journalData = data[0].journal;
+    console.log('Journal:', journalData);
+
     // converting array of journal entry objects with property of park into array of parks
-    var parkArray = data.map(function(item) { return item["park"]; });
-    console.log(parkArray);
-    // function to count number of each item in array
+    var parksArray = journalData.map(function(item) { return item["park"]; });
+    console.log("Park Array:", parksArray);
+    parksArray.sort();
+
+    // counting number of each item in parks array and converting to two arrays: one of distinct parks, one of number of visits to each park
     var  count = {};
-    // TODO: make this work
-    // function to count number of each item in array
-    var  count = {};
-    parkArray.forEach(function(i) { count[i] = (count[i]||0)+1;  });
-    // eliminating duplicate items in array
-    parkArray = parkArray.filter( function( item, index, inputArray ) {
-           return inputArray.indexOf(item) == index;
-    });
-    console.log('uniqe parks:', parkArray);
+    parksArray.forEach(function(i) { count[i] = (count[i]||0)+1;  }); // converts array of items to object with distinct item and number of occurences in array
+    var parksVisited = Object.keys(count); // puts keys into array
+    var parkVisits = Object.values(count); // puts values into array
+
+    // converting two arrays into array of objects with properties of parks and visits
+    var checklist = parksVisited.map(function(e,i){return{park:e,visits:parkVisits[i]}});
+    console.log('Checklist Objects Array', checklist);
     if (err) {
+
       res.sendStatus(500);
       return;
     }
-    res.send(parkArray);
+    res.send(checklist);
   });
+
+
 }); // end of get
 
-
-// function to count number of each item in array
-// var  count = {};
-// parkArray.forEach(function(i) { count[i] = (count[i]||0)+1;  });
 
 module.exports = router;
