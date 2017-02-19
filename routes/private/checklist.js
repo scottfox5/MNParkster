@@ -27,9 +27,9 @@ router.get('/', function (req, res) {
       res.sendStatus(500);
       return;
     }
-    // console.log('Checklist Objects Array of park/visits:', checklist)
+    // console.log('Checklist Array of Objects w/ park/visits:', checklist)
     res.send(checklist);
-    
+
   }); // end of UserJournal.find
 
 
