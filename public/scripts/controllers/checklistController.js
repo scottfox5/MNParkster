@@ -1,15 +1,16 @@
-googleAuthApp.controller('ChecklistController', function (ChecklistService) {
-console.log('Checklist Controller');
+googleAuthApp.controller('ChecklistController', function ($http) {
+// console.log('Checklist Controller');
 var vm = this;
-vm.parkList = [];
 
   vm.getParks = function(){ //
-    ChecklistService.getParks().then(function(response, data){
-      console.log('Got ParkList:', response)
-      vm.checklist = response;
-    }).catch(function(err){
-      console.log('error getting user checklist', err)
-    });
+      return $http.get("/private/checklist").then(function(response) {
+        // console.log('Checklist Data:', response.data)
+        return vm.checklist = response.data;
+      }).catch(function(err) {
+        console.log("Error getting checklist", err);
+      });
   }; // end of getParks
+
   vm.getParks();
+
 }); //end of controller

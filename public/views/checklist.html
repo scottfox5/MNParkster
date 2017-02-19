@@ -5,12 +5,10 @@
       <th>Parks Visited</th>
       <th>Number of Visits</th>
     </thead>
-    <!-- <p>You have visited {{cc.parkList.length}} of the 67 State Parks</p> -->
+    <!-- checklist is array of objects  -->
     <p>You have visited {{cc.checklist.length}} of the 67 State Parks. You have {{ 67 - cc.checklist.length }} parks yet to visit.</p>
-
     <tbody id='table-body' ng-repeat="parks in cc.checklist" n>
       <td ng-model="parks.park">{{parks.park}}</td>
-      <!-- TODO: display number of visits to that park  -->
       <td g-model="parks.visits">{{parks.visits}}</td>
     </tbody>
   </table>
