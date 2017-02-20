@@ -1,4 +1,4 @@
-googleAuthApp.controller('ChecklistController', function ($http) {
+parkApp.controller('ChecklistController', function ($http) {
 // console.log('Checklist Controller');
 var vm = this;
 

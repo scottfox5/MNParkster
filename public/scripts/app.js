@@ -1,4 +1,4 @@
-var googleAuthApp = angular.module('parkJournalApp', ['ngRoute']);
+var parkApp = angular.module('parkJournalApp', ['ngRoute']);
 
   googleAuthApp.config(['$routeProvider', function ($routeProvider) {
 

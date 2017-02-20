@@ -1,4 +1,4 @@
-googleAuthApp.service('JournalService', function ($http) {
+parkApp.service('JournalService', function ($http) {
 
   this.getUserJournal = function() {
     return $http.get("/private/journal").then(function(response) {

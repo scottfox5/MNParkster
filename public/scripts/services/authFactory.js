@@ -1,4 +1,4 @@
-googleAuthApp.factory('AuthFactory', function ($http) {
+parkApp.factory('AuthFactory', function ($http) {
   var Status = {
     loggedIn: false,
   };

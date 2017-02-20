@@ -13,7 +13,6 @@
   <script src="/public/scripts/controllers/journalController.js"></script>
   <script src="/public/scripts/services/journalService.js"></script>
   <script src="/public/scripts/controllers/checklistController.js"></script>
-  <script src="/public/scripts/services/checklistService.js"></script>
   <script src="/public/scripts/controllers/quoteController.js"></script>
   <link rel="stylesheet" type="text/css" href="/public/vendors/normalize.css" />
   <script src="/public/vendors/sweetalert.min.js"></script>
@@ -48,19 +47,19 @@
       </div>
     </nav>
     <h1>Wild Minnesota</h1>
+
     <!-- Show message user could not login/logout -->
     <section id="message" class="nc.message.type" ng-show="nc.message.text">
       {{nc.message.text}}
     </section>
-    <!-- <section ng-show="auth.loggedIn" ngController="QuoteController as qc">
-      <h3 id="randomQuote" ng-model="qc.quote">Words of Inspiration: {{qc.quote}}</h3>
-    </section> -->
+
   </header>
 
+  <div ng-include="'public/views/header.html'"></div>
 
-  <!-- <div ng-include="'public/views/header.html'"></div> -->
   <!-- different views to navigate to -->
   <ng-view></ng-view>
+  
 </body>
 
 </html>

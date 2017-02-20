@@ -1,9 +1,9 @@
-googleAuthApp.controller('NavController', function (AuthFactory, $window, $http) {
-  console.log("NavController Connected");
+parkApp.controller('NavController', function (AuthFactory, $window, $http) {
+  // console.log("NavController Connected");
   var vm = this;
   var authFactory = AuthFactory;
 
-  vm.displayLogout = false; // should we display the logout option on the DOM?
+  vm.displayLogout = false; // to display logout option on the DOM
   vm.message = {
     text: false,
     type: 'info',
@@ -39,14 +39,5 @@ googleAuthApp.controller('NavController', function (AuthFactory, $window, $http)
         vm.message.type = 'error';
       });
   };
-
-  vm.getQuote = function() {
-    return $http.get("/private/quote").then(function(response) {
-      // console.log('Quote:', response.data)
-      return vm.quote = response.data;
-    }).catch(function(err) {
-      console.log("Error getting random quote", err);
-    });
-  }();
 
 });

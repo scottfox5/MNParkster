@@ -1,5 +1,5 @@
-googleAuthApp.controller('JournalController', function (JournalService) {
-console.log('Journal Controller Connected');
+parkApp.controller('JournalController', function (JournalService) {
+// console.log('Journal Controller Connected');
 var vm = this;
 vm.journalList = [];
 vm.data = '';

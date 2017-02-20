@@ -1,18 +1,8 @@
 <!-- Shown for users that are NOT logged in -->
 <section ng-hide="auth.loggedIn" id="googleLogin">
-  <!-- Button image is from Googles sign-in button brand guidelines page -->
-  <a href= "/auth/google"><img src="/public/assets/btn_google_signin_dark_normal_web.png" /></a>
-</section>
-<!-- Shown for users that are logged in -->
-<section  ng-controller="NavController as nc">
-  <!-- ng-show="auth.loggedIn"  -->
-  <section >
-    <!-- ngController="QuoteController as qc" -->
-    <h3 id="randomQuote" ng-show="nc.displayLogout" ng-model="nc.quote">{{nc.quote}}</h3>
-  </section>
+  <a href= "/auth/google"><img src="/public/assets/btn_google_signin_dark_normal_web.png" /></a> <!-- button follows Google brand guidelines -->
 </section>
 
-<!-- <section ngController="QuoteController as qc">
-  <h3 id="randomQuote" ng-model="qc.quote">Words of Inspiration: {{qc.quote}}</h3>
-</section> -->
- <!-- ng-show="auth.loggedIn"  -->
+<section  ng-controller="QuoteController as qc">
+  <h3 id="randomQuote" ng-model="qc.quote">{{qc.quote}}</h3>
+</section>
