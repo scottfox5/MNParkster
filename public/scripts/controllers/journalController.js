@@ -49,6 +49,7 @@ vm.data = '';
     });
   }; // end of deleteJournalEntry
 
+
 // vm.confirmDelete(){
 //   swal({
 //   title: "Are you sure?",

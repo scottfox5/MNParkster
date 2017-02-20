@@ -1,8 +1,17 @@
 <!-- Shown for users that are NOT logged in -->
-<section ng-hide="auth.loggedIn" ng-show="nc.displayLogout" id="googleLogin">
-  <a href= "/auth/google"><img src="/public/assets/btn_google_signin_dark_normal_web.png" /></a> <!-- button follows Google brand guidelines -->
+<section ng-hide="auth.loggedIn" id="titleLogin">
+    <h1>Welcome to Wild Minnesota <br>Please Sign In</h1>
+    <a href= "/auth/google"><img src="/public/assets/btn_google_signin_dark_normal_web.png" /></a> <!-- button follows Google brand guidelines -->
 </section>
 
 <section ng-controller="QuoteController as qc">
   <h3 id="randomQuote" ng-model="qc.quote">{{qc.quote}}</h3>
 </section>
+
+<style>
+  body {
+    text-align: center;
+      background: url(/public/assets/bwca_canoe.JPG) no-repeat center center fixed;
+      background-size: cover;
+  }
+</style>

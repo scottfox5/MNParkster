@@ -1,15 +1,27 @@
 <h2>Park Checklist</h2>
-<div class="table-responsive row">
-  <table id="checklist" class="table-hover table-bordered col-sm-12">
+<div>
+  <table id="checklist" class="table-responsive table-hover">
     <thead>
-      <th>Parks Visited</th>
-      <th>Number of Visits</th>
+      <tr>
+        <th >Parks Visited</th>
+        <th >Visits</th>
+      </tr>
     </thead>
     <!-- checklist is array of objects  -->
-    <p>You have visited {{cc.checklist.length}} of the 67 State Parks. You have {{ 67 - cc.checklist.length }} parks yet to visit.</p>
+    <h2 id="parkCounter">You have visited {{cc.checklist.length}} of the 67 State Parks.<br> You have {{ 67 - cc.checklist.length }} parks yet to visit.</h2>
     <tbody id='table-body' ng-repeat="parks in cc.checklist">
-      <td ng-model="parks.park">{{parks.park}}</td>
-      <td g-model="parks.visits">{{parks.visits}}</td>
+      <tr>
+        <td ng-model="parks.park">{{parks.park}}</td>
+        <td ng-model="parks.visits">{{parks.visits}}</td>
+      </tr>
     </tbody>
   </table>
 </div>
+
+<style>
+  body {
+    text-align: center;
+      background: url(/public/assets/frontenac_tree.jpeg) no-repeat center center fixed;
+      background-size: cover;
+  }
+</style>

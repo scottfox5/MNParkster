@@ -5,7 +5,8 @@
   <title>Wild Minnesota</title>
   <script src="/public/vendors/angular.min.js"></script>
   <script src="/public/vendors/angular-route.min.js"></script>
-  <!-- <script src="/public/vendors/bootstrap.min.js"></script> -->
+  <script src="/public/vendors/jquery.min.js"></script>
+  <script src="/public/vendors/bootstrap.min.js"></script>
   <script src="/public/scripts/app.js"></script>
   <script src="/public/scripts/services/authFactory.js"></script>
   <script src="/public/scripts/controllers/navController.js"></script>
@@ -19,33 +20,46 @@
   <link rel="stylesheet" type="text/css" href="/public/vendors/sweetalert.css" />
   <link rel="stylesheet" type="text/css" href="/public/vendors/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="/public/styles/stylesheet.css" />
+  <link href="https://fonts.googleapis.com/css?family=Prociono|Ubuntu" rel="stylesheet">
 </head>
 <!-- Bring in the Angular app -->
 
 <body class="container" ng-app="parkJournalApp">
   <!-- header to be displayed on every page, except hidden if not logged in  -->
   <header ng-controller="NavController as nc">
+
     <nav class="navbar navbar-inverse navbar-fixed-top" ng-show="nc.displayLogout">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img class="navbar-brand" src="/public/assets/camping_symbol.png"/>
           <a class="navbar-brand" href="#">Wild Minnesota</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class=""><a href="#home">Home</a></li>
-            <li class=""><a href="#journal">My Journal</a></p>
-            <li class=""><a href="#checklist">My Park Checklist</a></p>
-            <li class=""><a href="#" ng-click="nc.logout()">Logout <span id="username">{{nc.username}}</span></a></li>
-          </ul>
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#journalForm">Add A Trip</a></p>
+            <li class="nav-item"><a class="nav-link" href="#myJournal">My Journal</a></p>
+            <li class="nav-item"><a class="nav-link" href="#checklist">Park Tracker</a></p>
+            <li class="nav-item"><a class="nav-link" href="#myPhotos">Photos</a></li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plan A Trip</a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" target="_blank" href="https://reservations1.usedirect.com/MinnesotaWebHome/Default.aspx">MN DNR Reservations</a></li>
+                <li><a class="dropdown-item" target="_blank" href="http://www.dnr.state.mn.us/state_parks/map.html">MN State Park Home</a></li>
+                <li><a class="dropdown-item" target="_blank" href="https://en.wikipedia.org/wiki/List_of_Minnesota_state_parks">MN State Parks Wikipedia</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Maps</a>
+              <ul ng-include="'public/views/mapDropdown.html'" class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdownMenuLink"></ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#" ng-click="nc.logout()">Logout <span id="username">{{nc.username}}</span></a></li>
         </div>
       </div>
     </nav>
-
 
     <!-- Show message user could not login/logout -->
     <section id="message" class="nc.message.type" ng-show="nc.message.text">
@@ -56,8 +70,6 @@
 
   <!-- header, navbar displayed after login -->
   <!-- <div ng-include="'public/views/header.html'"></div> -->
-
-  <h1>Wild Minnesota</h1>
 
   <!-- different views to navigate to -->
   <ng-view></ng-view>

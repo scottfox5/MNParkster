@@ -2,30 +2,35 @@
   <h2>Add a Journal Entry</h2>
   <form class="form" id="journalForm" name="journalForm">
     <div class="row">
-      <div class="form-group col-sm-3">
+      <div class="form-group col-xs-5 col-xs-offset-1">
         <label for="date">Date:</label>
         <input class="form-control" type="date" id="date" name="date" ng-model="jc.journalEntry.date" ng-focus="date=true" ng-blur="date=false" required/>
         <span style="color:red" ng-show="journalForm.date.$invalid">
           <span ng-show="journalForm.$invalid && date==true">Date is required.</span>
         </span>
       </div>
-      <div class="form-group col-sm-3">
+      <div class="form-group col-xs-5">
         <div ng-include="'public/views/parkSelect.html'"></div>
           <!-- TODO: fix so if touched change to true, currently not turning off after selectionn  -->
           <span style="color:red" ng-show="journalForm.notes.$invalid">
             <span ng-show="journalForm.$invalid && park==true">Park is required.</span>
           </span>
       </div>
-      <div class="row">
-        <div class="col-sm-12">
+        <div class="form-group col-xs-10 col-xs-offset-1">
           <label for="notes">Notes:</label>
-          <input class="form-control" type="text" id="notes" name="notes" ng-model="jc.journalEntry.notes" ng-focus="notes=true" ng-blur="notes=false" required/>
+          <textarea class="form-control" id="notes" rows="5" name="notes" ng-model="jc.journalEntry.notes" ng-focus="notes=true" ng-blur="notes=false" required></textarea>
           <span style="color:red" ng-show="journalForm.notes.$invalid">
             <span ng-show="journalForm.$invalid && notes==true">Journal entry is required.</span>
           </span>
           <button ng-click="jc.addJournalEntry(jc.journalEntry)" ng-disabled="journalForm.$invalid">Submit</button>
         </div>
-      </div>
     </div>
   </form>
 </section>
+<style>
+  body {
+    text-align: center;
+      background: url(/public/assets/bird.JPG) no-repeat center center fixed;
+      background-size: cover;
+  }
+</style>

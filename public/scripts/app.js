@@ -8,8 +8,13 @@ var parkApp = angular.module('parkJournalApp', ['ngRoute']);
       controller: 'AuthController',
       controllerAs: 'auth',
       })
-      .when('/journal', {
-        templateUrl: '/public/views/journal.html',
+      .when('/journalForm', {
+        templateUrl: '/public/views/journalForm.html',
+        controller: 'JournalController',
+        controllerAs: 'jc',
+      })
+      .when('/myJournal', {
+        templateUrl: '/public/views/myJournal.html',
         controller: 'JournalController',
         controllerAs: 'jc',
       })
@@ -17,6 +22,11 @@ var parkApp = angular.module('parkJournalApp', ['ngRoute']);
         templateUrl: '/public/views/checklist.html',
         controller: 'ChecklistController',
         controllerAs: 'cc',
+      })
+      .when('/myPhotos', {
+        templateUrl: '/public/views/myPhotos.html',
+        controller: 'PhotoController',
+        controllerAs: 'pc',
       })
       .otherwise({
         redirectTo: 'login',

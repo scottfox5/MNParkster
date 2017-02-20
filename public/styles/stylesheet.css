@@ -1,5 +1,25 @@
 body {
   text-align: center;
+  font-family: 'Prociono', sans-serif;
+  color: #484A33;
+}
+
+button {
+  margin: 15px;
+}
+
+#titleLogin {
+  margin-top: 50px;
+  padding: 10px;
+  background-color: #ACC6D6;
+  opacity: 0.8;
+  display: inline-block;
+}
+
+#randomQuote {
+  margin-top: 100px;
+  background-color: #ACC6D6;
+  opacity: 0.8;
 }
 
 .nav {
@@ -8,19 +28,70 @@ body {
   vertical-align: top;
 }
 
+.navbar {
+  background-color: #484A33;
+}
+
 #username {
   padding: 15px 0 15px;
 }
 
-#googleLogin {
-  margin-top: 100px
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
 }
 
-#journalEntry {
-  margin: 40px 0 0 0;
-  border: 1px solid gray;
+
+/* journal styles*/
+
+#journalSubmission {
+  margin: 100px;
+  padding: 0px;
+  background-color: #ACC6D6;
+  opacity: 0.9;
+  display: inline-block;
 }
 
 #myJournal {
+  display: block;
+  max-width: 600px;
+  margin-top: 100px;
+  background-color: #ACC6D6;
+  opacity: 0.9;
+}
+
+#journalEntry {
+  margin-top: 20px;
+  border-bottom: 1px solid gray;
+  margin-top: 40px;
+  padding: 10px;
+}
+
+/* checklist styles */
+#parkCounter {
+  font-size: 20px;
+  margin: 20px;
+}
+
+#checklist {
   margin: 50px;
+  padding: 10px;
+  background-color: #ACC6D6;
+  opacity: .9;
+  display: inline-block;
+  border: none;
+}
+
+th {
+  text-align: center;
+}
+
+td {
+  padding: 20px;
+}
+
+/* photo album styles*/
+#soon {
+  margin-top: 200px;
 }
