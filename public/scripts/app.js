@@ -1,6 +1,6 @@
 var parkApp = angular.module('parkJournalApp', ['ngRoute']);
 
-  googleAuthApp.config(['$routeProvider', function ($routeProvider) {
+  parkApp.config(['$routeProvider', function ($routeProvider) {
 
     $routeProvider
       .when('/login', {

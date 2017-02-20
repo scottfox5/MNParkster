@@ -43,10 +43,9 @@
             <li class=""><a href="#" ng-click="nc.logout()">Logout <span id="username">{{nc.username}}</span></a></li>
           </ul>
         </div>
-        <!--/.nav-collapse -->
       </div>
     </nav>
-    <h1>Wild Minnesota</h1>
+
 
     <!-- Show message user could not login/logout -->
     <section id="message" class="nc.message.type" ng-show="nc.message.text">
@@ -55,11 +54,14 @@
 
   </header>
 
-  <div ng-include="'public/views/header.html'"></div>
+  <!-- header, navbar displayed after login -->
+  <!-- <div ng-include="'public/views/header.html'"></div> -->
+
+  <h1>Wild Minnesota</h1>
 
   <!-- different views to navigate to -->
   <ng-view></ng-view>
-  
+
 </body>
 
 </html>
