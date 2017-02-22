@@ -1,13 +1,11 @@
-// parkApp.controller('photoController', ['$scope', '$http', 'Upload', function($scope, $http, Upload) {
-parkApp.controller('photoController', ['$scope', '$http', function($scope, $http) {
-
+parkApp.controller('photoController', ['$scope', '$http', 'Upload', function($scope, $http, Upload) {
   console.log('pc hit');
 
     // file variables
     $scope.file = '';
     $scope.uploads = [];
     $scope.comment = '';
-    //$scope.var2 = '';
+    // $scope.userId = '';
 
     //loads any already uploaded images
     getImages();
@@ -23,13 +21,11 @@ parkApp.controller('photoController', ['$scope', '$http', function($scope, $http
 
     //file uploading functions
     $scope.submit = function() {
-      console.log('submit hit')
         if ($scope.form.file.$valid && $scope.file) {
             $scope.upload($scope.file);
             console.log('file', $scope.file);
         }
         else {
-          console.log('missed it')
         }
     };
 

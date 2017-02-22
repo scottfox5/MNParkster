@@ -1,10 +1,6 @@
-<h2 id="soon">Coming Soon</h2>
-
-<form name="form" >
+<form name="form" id="picForm" >
 
     <div>
-      <!-- version I started with  -->
-      <!-- <input type="file" class="btn" ngf-select ng-model="photos.file" name="file" accept="image/*" required ngf-model-invalid="errorfile" /> -->
       <div ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 800, height: 800}">
           <button>Select Picture</button>
           <span> {{file.$ngfName}} </span>
@@ -14,21 +10,11 @@
         <button type="submit" ng-click="submit()">Upload</button>
     </div>
 
-
-
-<!-- <div|... ngf-no-file-drop>File Drag/drop is not supported</div> -->
-
-
-
-    <!-- button that works to select file -->
-    <!-- <input type="file" class="btn" ngf-select ng-model="photos.file" name="file" accept="image/*" required ngf-model-invalid="errorfile" /> -->
-
-
 </form>
 
-<div ng-repeat="picture in uploads | orderBy: 'created' : true ">
-<img ng-src="{{picture.file.location}}" />
-<div>
-    {{picture.comment}}
-</div>
+<div id="picDisplay" ng-repeat="picture in uploads | orderBy: 'created' : true ">
+  <img class="picFrame" ng-src="{{picture.file.location}}" />
+  <div>
+      {{picture.comment}}
+  </div>
 </div>

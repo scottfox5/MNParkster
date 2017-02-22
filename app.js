@@ -28,7 +28,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/uploads', uploads);
 
 /** ---------- DATABASE CONNECTION HANDLING ---------- **/
+
 database();
+
 /** ---------- SESSION CREATION AND STORAGE ---------- **/
 /**
  * Creates session that will be stored in memory.

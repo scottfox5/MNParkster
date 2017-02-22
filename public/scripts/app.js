@@ -1,4 +1,4 @@
-var parkApp = angular.module('parkJournalApp', ['ngRoute']);
+var parkApp = angular.module('parkJournalApp', ['ngRoute', 'ngFileUpload']);
 
   parkApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider

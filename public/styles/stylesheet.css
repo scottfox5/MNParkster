@@ -95,3 +95,15 @@ td {
 #soon {
   margin-top: 200px;
 }
+
+#picForm {
+  margin-top: 200px;
+}
+
+#picDisplay {
+  display: inline-block;
+}
+
+.picFrame {
+  max-height: 200px;
+}
