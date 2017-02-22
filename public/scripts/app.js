@@ -1,7 +1,6 @@
 var parkApp = angular.module('parkJournalApp', ['ngRoute']);
 
   parkApp.config(['$routeProvider', function ($routeProvider) {
-
     $routeProvider
       .when('/login', {
       templateUrl: '/public/views/login.html',
@@ -25,8 +24,8 @@ var parkApp = angular.module('parkJournalApp', ['ngRoute']);
       })
       .when('/myPhotos', {
         templateUrl: '/public/views/myPhotos.html',
-        controller: 'PhotoController',
-        controllerAs: 'pc',
+        controller: "photoController",
+        controllerAs: 'pc'
       })
       .otherwise({
         redirectTo: 'login',

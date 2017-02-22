@@ -10,12 +10,23 @@ var auth = require('./routes/auth');
 var isLoggedIn = require('./utils/auth');
 var private = require('./routes/private/index');
 var database = require('./utils/database');
+
+
+/// added for photo uploading
+require('dotenv').load();//loads environment variables locally
+var uploads = require('./routes/uploads');
+
+
+
 /** ---------- EXPRESS APP CONFIG ---------- **/
 var app = express();
 app.use('/public', express.static('public'));  // serve files from public
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use('/uploads', uploads);
+
 /** ---------- DATABASE CONNECTION HANDLING ---------- **/
 database();
 /** ---------- SESSION CREATION AND STORAGE ---------- **/
@@ -44,6 +55,7 @@ app.use('/auth', auth);
 app.use('/private', isLoggedIn, private);
 app.use('/', index);
 /** ---------- SERVER START ---------- **/
-app.listen(5555, function () {
-  console.log('Now running on port ', 5555);
+app.set('port', process.env.PORT || 5555);
+app.listen(app.get('port'), function() {
+    console.log('Listening on port: ', app.get('port'));
 });
