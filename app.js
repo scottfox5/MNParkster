@@ -25,7 +25,7 @@ app.use('/public', express.static('public'));  // serve files from public
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/uploads', uploads);
+
 
 /** ---------- DATABASE CONNECTION HANDLING ---------- **/
 
@@ -56,6 +56,7 @@ app.use(passport.session());
 app.use('/auth', auth);
 app.use('/private', isLoggedIn, private);
 app.use('/', index);
+app.use('/uploads', uploads);
 /** ---------- SERVER START ---------- **/
 app.set('port', process.env.PORT || 5555);
 app.listen(app.get('port'), function() {

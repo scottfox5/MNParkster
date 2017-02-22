@@ -5,7 +5,7 @@ parkApp.controller('photoController', ['$scope', '$http', 'Upload', function($sc
     $scope.file = '';
     $scope.uploads = [];
     $scope.comment = '';
-    // $scope.userId = '';
+    $scope.userId = '';
 
     //loads any already uploaded images
     getImages();
@@ -36,8 +36,8 @@ parkApp.controller('photoController', ['$scope', '$http', 'Upload', function($sc
             data: {
                 file: file,
                 //can add more variables to data to store in DB
-                'comment': $scope.comment
-                //'var2': $scope.var2
+                'comment': $scope.comment,
+                'userId': $scope.userId
             }
         }).then(function(resp) {
             console.log('Success ' + resp.config.data.file.name + ' uploaded. Response: ' + resp.data);
