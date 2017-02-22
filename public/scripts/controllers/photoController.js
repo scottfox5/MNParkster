@@ -1,6 +1,6 @@
-parkApp.controller('photoController', ['$scope', '$http', 'Upload', function($scope, $http, Upload) {
+parkApp.controller('PhotoController', ['$scope', '$http', 'Upload', function($scope, $http, Upload) {
   console.log('pc hit');
-
+  var vm = this;
     // file variables
     $scope.file = '';
     $scope.uploads = [];
@@ -17,6 +17,15 @@ parkApp.controller('photoController', ['$scope', '$http', 'Upload', function($sc
                 $scope.uploads = response.data;
                 console.log('GET /uploads ', response.data);
             });
+    }
+
+    vm.deleteImage = function(id){
+      console.log ('delete id:', id)
+      return $http.delete("/uploads/" + id)
+      .catch(function(err) {
+        console.log("Error deleting journal entry", err);
+      });
+        getImages();
     }
 
     //file uploading functions

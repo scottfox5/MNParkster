@@ -1,8 +1,8 @@
 <form name="form" id="picForm" >
 
     <div>
-      <div ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 800, height: 800}">
-          <button>Select Picture</button>
+      <div>
+          <button ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 800, height: 800}">Select Picture</button>
           <span> {{file.$ngfName}} </span>
           <img ngf-thumbnail="file || '/images/upload.svg'">
       </div>
@@ -17,4 +17,5 @@
   <div>
       {{picture.comment}}
   </div>
+  <button class="btn btn-warning" ng-click="pc.deleteImage(picture._id)">Delete</button>
 </div>

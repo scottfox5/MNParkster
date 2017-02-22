@@ -24,7 +24,7 @@ var parkApp = angular.module('parkJournalApp', ['ngRoute', 'ngFileUpload']);
       })
       .when('/myPhotos', {
         templateUrl: '/public/views/myPhotos.html',
-        controller: "photoController",
+        controller: "PhotoController",
         controllerAs: 'pc'
       })
       .otherwise({
