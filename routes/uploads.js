@@ -25,12 +25,13 @@ var upload = multer({
 
 //upload.single('file') is the line that uploads to AWS, the rest is MongoDB
 router.post('/', upload.single('file'), function(req, res) {
-  console.log('Post request user:', req.user)
+  console.log('Post request user:', req.user.journal)
   var newUpload = {
     created: Date.now(),
     file: req.file,
     comment: req.body.comment,
-    userId: req.user._id
+    userId: req.user._id,
+    journalId: req.user._id
   };
   Upload.create(newUpload, function (err) {
     if (err) {
@@ -44,9 +45,9 @@ router.post('/', upload.single('file'), function(req, res) {
 //gets all the uploads recorded in the database
 router.get('/', function (req, res) {
   var userId = req.user._id;
-  console.log('Get Request user:', userId);
+  // console.log('Get Request user:', userId);
   Upload.find({"userId" : userId}, function (err, data) {
-    console.log("Get photo data:", data)
+    // console.log("Get photo data:", data)
     if (err) {
       res.sendStatus(500);
       return;

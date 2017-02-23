@@ -6,6 +6,7 @@ parkApp.controller('PhotoController', ['$scope', '$http', 'Upload', function($sc
     $scope.uploads = [];
     $scope.comment = '';
     $scope.userId = '';
+    $scope.journalId = '';
 
     //loads any already uploaded images
     getImages();
@@ -18,18 +19,6 @@ parkApp.controller('PhotoController', ['$scope', '$http', 'Upload', function($sc
                 console.log('GET /uploads ', response.data);
             });
     }
-
-    // image delete without swal
-    // vm.deleteImage = function(id){
-    //   // console.log ('delete id:', id);
-    //   $http.delete("/uploads/" + id)
-    //   .then(function(){
-    //     getImages();
-    //   })
-    //   .catch(function(err) {
-    //     console.log("Error deleting journal entry", err);
-    //   });
-    // }
 
     vm.deleteImage = function(id){
       swal({
@@ -72,7 +61,8 @@ parkApp.controller('PhotoController', ['$scope', '$http', 'Upload', function($sc
                 file: file,
                 //can add more variables to data to store in DB
                 'comment': $scope.comment,
-                'userId': $scope.userId
+                'userId': $scope.userId,
+                'journalId': $scope.journalId
             }
         }).then(function(resp) {
             console.log('Success ' + resp.config.data.file.name + ' uploaded. Response: ' + resp.data);

@@ -37,19 +37,6 @@ vm.data = '';
     });
   }; // end of updateJournalEntry
 
-// journal entry with out swal confirm
-  // vm.deleteJournalEntry = function(id, park){
-  //   JournalService.deleteJournalEntry(id)
-  //   .then(function(){
-  //   // console.log('Deleted Journal Entry:', id, park);
-  //   vm.getUserJournal();
-  //   swal("Deleted!", "That trip to "+ park +" State Park sucked anyway.", "success")
-  //   }).catch(function(err){
-  //   console.log('error deleting journal entry', err)
-  //   });
-  // }; // end of deleteJournalEntry
-
-
   vm.deleteJournalEntry = function(id, park){
     swal({
       title: "Are you sure?",
