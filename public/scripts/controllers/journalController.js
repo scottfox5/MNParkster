@@ -37,48 +37,41 @@ vm.data = '';
     });
   }; // end of updateJournalEntry
 
+// journal entry with out swal confirm
+  // vm.deleteJournalEntry = function(id, park){
+  //   JournalService.deleteJournalEntry(id)
+  //   .then(function(){
+  //   // console.log('Deleted Journal Entry:', id, park);
+  //   vm.getUserJournal();
+  //   swal("Deleted!", "That trip to "+ park +" State Park sucked anyway.", "success")
+  //   }).catch(function(err){
+  //   console.log('error deleting journal entry', err)
+  //   });
+  // }; // end of deleteJournalEntry
+
 
   vm.deleteJournalEntry = function(id, park){
-    JournalService.deleteJournalEntry(id)
-    .then(function(){
-    // console.log('Deleted Journal Entry:', id, park);
-    vm.getUserJournal();
-    swal("Deleted!", "That trip to "+ park +" State Park sucked anyway.", "success")
-    }).catch(function(err){
-    console.log('error deleting journal entry', err)
-    });
-  }; // end of deleteJournalEntry
-
-
-// vm.confirmDelete(){
-//   swal({
-//   title: "Are you sure?",
-//   text: "You will not be able to recover this journal entry!",
-//   type: "warning",
-//   showCancelButton: true,
-//   confirmButtonClass: "btn-danger",
-//   confirmButtonText: "Yes, delete it!",
-//   cancelButtonText: "No, cancel please!",
-//   closeOnConfirm: false,
-//   closeOnCancel: false
-//   },
-//   function(isConfirm) {
-//     if (isConfirm) {
-//       vm.deleteJournalEntry = function(id){
-//         JournalService.deleteJournalEntry(id)
-//         .then(function(){
-//         console.log('deleted journal entry:', id);
-//         vm.getUserJournal();
-//         }).catch(function(err){
-//         console.log('error deleting journal entry', err)
-//         });
-//       }; // end of deleteJournalEntry
-//       swal("Deleted!", "It's gone forever.", "success");
-//     } else {
-//       swal("Cancelled", "Your journal entry is safe:)", "error");
-//     }
-//   });
-// };
+    swal({
+      title: "Are you sure?",
+      text: "You will not be able to recover this journal entry!",
+      type: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "No, cancel please!",
+      closeOnConfirm: false,
+      closeOnCancel: false },
+      function(isConfirm){
+        if (isConfirm) {
+          swal("Deleted!", "That trip to "+ park +" State Park sucked anyway.", "success");
+          JournalService.deleteJournalEntry(id)
+          .then(function(response){
+            vm.getUserJournal();
+          });// end http delete call
+        } else {
+          swal("Cancelled", "Your journal entry is safe :)", "error");
+        }// end else
+      });// end swal alert
+    };// end deleteJournalEntry
 
 
 

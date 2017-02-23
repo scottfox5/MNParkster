@@ -19,14 +19,40 @@ parkApp.controller('PhotoController', ['$scope', '$http', 'Upload', function($sc
             });
     }
 
+    // image delete without swal
+    // vm.deleteImage = function(id){
+    //   // console.log ('delete id:', id);
+    //   $http.delete("/uploads/" + id)
+    //   .then(function(){
+    //     getImages();
+    //   })
+    //   .catch(function(err) {
+    //     console.log("Error deleting journal entry", err);
+    //   });
+    // }
+
     vm.deleteImage = function(id){
-      console.log ('delete id:', id)
-      return $http.delete("/uploads/" + id)
-      .catch(function(err) {
-        console.log("Error deleting journal entry", err);
-      });
-        getImages();
-    }
+      swal({
+        title: "Are you sure?",
+        text: "You will not be able to recover this photo!",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel please!",
+        closeOnConfirm: false,
+        closeOnCancel: false },
+        function(isConfirm){
+          if (isConfirm) {
+            swal("Deleted!", "That image was weak anyway.", "success");
+            $http.delete("/uploads/" + id)
+            .then(function(){
+              getImages();
+            })
+          } else {
+            swal("Cancelled", "Your photo is safe :)", "error");
+          }// end else
+        });// end swal alert
+      };// end deleteImage
 
     //file uploading functions
     $scope.submit = function() {

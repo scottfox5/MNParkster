@@ -106,4 +106,6 @@ td {
 
 .picFrame {
   max-height: 200px;
+  margin: 20px;
+  border: white 5px solid
 }
