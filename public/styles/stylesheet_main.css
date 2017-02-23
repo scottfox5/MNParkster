@@ -1,0 +1,43 @@
+body {
+  text-align: center;
+  font-family: 'Prociono', sans-serif;
+  color: #484A33;
+}
+
+button {
+  margin: 15px;
+}
+
+#titleLogin {
+  margin-top: 50px;
+  padding: 10px;
+  background-color: #ACC6D6;
+  opacity: 0.8;
+  display: inline-block;
+}
+
+#randomQuote {
+  margin-top: 100px;
+  background-color: #ACC6D6;
+  opacity: 0.8;
+}
+
+.nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar {
+  background-color: #484A33;
+}
+
+#username {
+  padding: 15px 0 15px;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}

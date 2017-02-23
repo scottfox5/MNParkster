@@ -1,0 +1,47 @@
+/* photo album styles*/
+#soon {
+  margin-top: 200px;
+}
+
+#picForm {
+  margin-top: 200px;
+}
+
+#picDisplay {
+  display: inline-block;
+}
+
+.picFrame {
+  max-height: 200px;
+  margin: 20px;
+  border: white 5px solid
+}
+
+/*img {
+  filter: blur(1px) sepia(20%);
+}
+
+img:hover {
+  filter: none;
+}*/
+
+
+/* attempt to allow thumbnails to be displayed in popups*/
+/*.thumbnail  {
+	position: relative;
+}
+
+.thumbnail span {
+  visibility: hidden;
+	position: absolute;
+}
+
+.thumbnail:hover span {
+	visibility: visible;
+
+}
+
+.popup {
+  margin-top: 100px;
+  max-height: 400px;
+}*/

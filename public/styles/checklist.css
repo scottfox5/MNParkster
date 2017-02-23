@@ -1,0 +1,23 @@
+/* checklist styles */
+#parkCounter {
+  font-size: 20px;
+  margin: 20px;
+}
+
+#checklist {
+  margin: 50px;
+  padding: 10px;
+  background-color: #ACC6D6;
+  opacity: .9;
+  display: inline-block;
+  border: none;
+}
+
+th {
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+td {
+  padding: 20px;
+}

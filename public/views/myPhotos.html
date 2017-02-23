@@ -1,5 +1,4 @@
 <form name="form" id="picForm" >
-
     <div>
       <div>
           <button ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 800, height: 800}">Select Picture</button>
@@ -9,16 +8,28 @@
         <input type="text" ng-model="comment" placeholder="Add comment.. " class="u-full-width" />
         <button type="submit" ng-click="submit()">Upload</button>
     </div>
-
 </form>
 
 <div id="picDisplay" ng-repeat="picture in uploads | orderBy: 'created' : true ">
   <img class="picFrame" ng-src="{{picture.file.location}}" />
-  <div>
-      {{picture.comment}}
-  </div>
-  <button class="btn btn-warning" ng-click="pc.deleteImage(picture._id)">Delete</button>
+  <div>{{picture.comment}}</div>
+  <button class="btn btn-danger btn-sm" ng-click="pc.deleteImage(picture._id)"><i class="fa fa-trash"></i></button>
 </div>
+
+<!-- attempt to allow thumbnails to be displayed in popup -->
+<!-- <div id="picDisplay" ng-repeat="picture in uploads | orderBy: 'created' : true ">
+
+  <div class="thumbnail">
+    <img  ng-src="{{picture.file.location}}" width="100px" height="100px">
+    <span><img class="popup center-block" ng-src="{{picture.file.location}}"><br> {{picture.comment}}</span>
+    <button class="btn btn-sm btn-warning" ng-click="pc.deleteImage(picture._id)">D</button>
+  </div>
+
+</div> -->
+
+
+
+
 
 <style>
   body {
