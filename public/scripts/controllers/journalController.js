@@ -60,6 +60,7 @@ vm.data = '';
       });// end swal alert
     };// end deleteJournalEntry
 
+    //
 
 
 }); //end of controller

@@ -8,7 +8,7 @@
       </tr>
     </thead>
     <!-- checklist is array of objects  -->
-    <h2 id="parkCounter">You have visited {{cc.checklist.length}} of the 67 State Parks.<br> You have {{ 67 - cc.checklist.length }} parks yet to visit.</h2>
+    <h2 id="parkCounter">You have visited <strong>{{cc.checklist.length}} </strong>of the 67 State Parks.<br> You have <strong>{{ 67 - cc.checklist.length }} </strong> parks yet to visit.</h2>
     <tbody id='table-body' ng-repeat="parks in cc.checklist">
       <tr>
         <td ng-model="parks.park">{{parks.park}}</td>
@@ -21,7 +21,7 @@
 <style>
   body {
     text-align: center;
-      background: url(/public/assets/frontenac_tree.jpeg) no-repeat center center fixed;
+      background: url(/public/assets/mnwater.JPG) no-repeat center center fixed;
       background-size: cover;
   }
 </style>

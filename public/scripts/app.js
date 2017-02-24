@@ -34,3 +34,9 @@ var parkApp = angular.module('parkJournalApp', ['ngRoute', 'ngFileUpload']);
 
 
 ]);
+
+// automatically resizes textareas on mouseover and keyup
+function auto_grow(element) {
+    element.style.height = "5px";
+    element.style.height = (element.scrollHeight)+"px";
+}

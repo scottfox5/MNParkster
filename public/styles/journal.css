@@ -1,24 +1,42 @@
 /* journal styles*/
-
 #journalSubmission {
-  margin: 100px;
+  color: ivory;
+  margin-top: 160px;
   padding: 0px;
-  background-color: #ACC6D6;
+  background-color: #434C4E;
   opacity: 0.9;
   display: inline-block;
 }
 
 #myJournal {
-  display: block;
-  max-width: 600px;
+  /*display: block;*/
+  /*max-width: 600px;*/
+  color: #484A33;
+  display: inline-block;
   margin-top: 100px;
-  background-color: #ACC6D6;
+  background-color: #B5BDB6;
   opacity: 0.9;
 }
 
+#myJournal h2 {
+  padding: 40px;
+}
+
 #journalEntry {
-  margin-top: 20px;
   border-bottom: 1px solid gray;
-  margin-top: 40px;
-  padding: 10px;
+  padding: 50px;
+}
+
+.journalNotes {
+  resize: none;
+  overflow: hidden;
+  min-height: 50px;
+}
+
+.journalPark {
+  font-size: 1.5em;
+}
+
+.journalDate {
+  font-size: 1.2em;
 }

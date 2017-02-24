@@ -10,15 +10,15 @@
   <div id="journalEntry" ng-repeat="journalEntry in jc.journalList | orderBy: jc.sortBy">
     <div class="row">
       <div class="col-xs-6">
-        <p ng-model="journalEntry.park">{{journalEntry.park}}</p>
+        <p class="journalPark" ng-model="journalEntry.park">{{journalEntry.park}}</p>
       </div>
       <div class="col-xs-6">
-        <p ng-model="journalEntry.date"/>{{journalEntry.date | date:'fullDate'}}</p>
+        <p class="journalDate" ng-model="journalEntry.date"/>{{journalEntry.date | date:'fullDate'}}</p>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12" id="journalUpdate">
-        <textarea id="journalNotes" class="form-control" name="notes" value="{{journalEntry.notes}}" ng-model="journalEntry.notes"></textarea>
+      <div class="col-xs-12">
+        <textarea onmouseover="auto_grow(this)" onkeyup="auto_grow(this)" id="journalNotes" class="form-control journalNotes" name="notes" value="{{journalEntry.notes}}" ng-model="journalEntry.notes"></textarea>
       </div>
     </div>
     <div class="row">
@@ -32,7 +32,7 @@
 <style>
   body {
     text-align: center;
-      background: url(/public/assets/night_loon.JPG) no-repeat center center fixed;
+      background: url(/public/assets/gijikiki2.JPG) no-repeat center center fixed;
       background-size: cover;
     /*background-color: #5A754E;*/
   }

@@ -1,21 +1,25 @@
 /* checklist styles */
 #parkCounter {
   font-size: 20px;
-  margin: 20px;
+  margin: 40px;
+  color: ghostwhite;
 }
 
 #checklist {
-  margin: 50px;
+  margin: 100px;
   padding: 10px;
-  background-color: #ACC6D6;
+  background-color: #425669;
   opacity: .9;
   display: inline-block;
   border: none;
+  color: ghostwhite;
 }
 
 th {
   text-align: center;
   border-bottom: 1px solid black;
+  padding: 20px;
+  font-style: bold;
 }
 
 td {
