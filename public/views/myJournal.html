@@ -1,4 +1,4 @@
-<div id="myJournal" class="center-block">
+<div id="myJournal">
   <h2>My Journal</h2>
   <div id="journalSort">
     <label>Sort By: </label>
@@ -18,7 +18,7 @@
     </div>
     <div class="row">
       <div class="col-xs-12 journalNotes">
-        <textarea type="text" onmouseover="auto_grow(this)" onkeyup="auto_grow(this)" id="journalNotes" class="form-control" name="notes" value="{{journalEntry.notes}}" ng-model="journalEntry.notes"></textarea>
+        <textarea type="text" onmouseover="auto_grow(this)"  onkeyup="auto_grow(this)" id="journalNotes" class="form-control" name="notes" value="{{journalEntry.notes}}" ng-model="journalEntry.notes"></textarea>
       </div>
     </div>
     <div class="row">
@@ -29,11 +29,11 @@
     </div>
   </div>
 </div>
+
 <style>
   body {
     text-align: center;
       background: url(/public/assets/gijikiki2.JPG) no-repeat center center fixed;
       background-size: cover;
-    /*background-color: #5A754E;*/
   }
 </style>

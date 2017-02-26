@@ -3,43 +3,21 @@
   <div ng-include="'public/views/parkSelectLL.html'"></div>
   <img src="/public/assets/mnParks.jpg" />
 </div>
-<!-- <table id="weatherTable" class="table table-responsive table-hover">
-  <caption class="text-center">Weather Forecast</caption>
-  <thead>
-    <tr>
-      <th>Day</th>
-      <th>Icon</th>
-      <th>Summary</th>
-      <th>High</th>
-      <th>Low</th>
-      <th>Chance of Precipitation</th>
-    </tr>
-  </thead>
-  <tbody ng-repeat="wa in wc.weather">
-    <tr>
-      <td ng-model="wa.time">{{wa.day | date:'fullDate'}}</td>
-      <td ng-model="wa.icon"><i class="wi wi-{{wa.icon}}"></i></td>
-      <td ng-model="wa.summary">{{wa.summary}}</td>
-      <td ng-model="wa.temperatureMax">{{wa.temperatureMax | number:0}}°F</td>
-      <td ng-model="wa.temperatureMin">{{wa.temperatureMin | number:0}}°F</td>
-      <td ng-model="wa.precipProbability">{{wa.precipProbability * 100 | number:0}}%</td>
-    </tr>
-  </tbody>
-</table> -->
 
-  <h3>Weather Forecast</h3>
-  <div id="weatherTable" class="row" ng-repeat="wa in wc.weather">
-      <div class="col-xs-3 weatherBox">
-        <p ng-model="wa.day"><strong>{{wa.day | date:'EEEE, MMMM dd'}}</strong></p>
-        <p ng-model="wa.icon"><i class="wi wi-forecast-io-{{wa.icon}}"></i></p>
-        <p ng-model="wa.summary"><em>{{wa.summary}}</em></p>
-        <p ng-model="wa.temperatureMax">High: <strong>{{wa.temperatureMax | number:0}}</strong>°F</p>
-        <p ng-model="wa.temperatureMin">Low: <strong>{{wa.temperatureMin | number:0}}</strong>°F</p>
-        <p ng-model="wa.precipProbability">Precipitation: {{wa.precipProbability * 100 | number:0}}% chance</p>
-      </div>
+<h3>Weather Forecast</h3>
+<div id="weatherTable" class="row" ng-repeat="wa in wc.weather">
+  <div class="col-xs-3 weatherBox">
+    <p ng-model="wa.day"><strong>{{wa.day | date:'EEEE, MMMM dd'}}</strong></p>
+    <p ng-model="wa.icon"><i class="wi wi-forecast-io-{{wa.icon}}"></i></p>
+    <p ng-model="wa.summary"><em>{{wa.summary}}</em></p>
+    <p ng-model="wa.temperatureMax">High: <strong>{{wa.temperatureMax | number:0}}</strong>°F</p>
+    <p ng-model="wa.temperatureMin">Low: <strong>{{wa.temperatureMin | number:0}}</strong>°F</p>
+    <p ng-model="wa.precipProbability">Precipitation: {{wa.precipProbability * 100 | number:0}}% chance</p>
   </div>
+</div>
 
 <div id="parkMaps" ng-include="'public/views/parkMaps.html'"></div>
+
 <style>
   body {
     background-color: #d6dbe0;

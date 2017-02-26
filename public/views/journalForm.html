@@ -6,13 +6,13 @@
       <div class="form-group col-xs-5 col-xs-offset-1">
         <label for="date">Date:</label>
         <input class="form-control" type="date" id="date" name="date" ng-model="jc.journalEntry.date" ng-focus="date=true" ng-blur="date=false" required/>
-        <span style="color:red" ng-show="journalForm.date.$invalid">
+        <span style="color:white" ng-show="journalForm.date.$invalid">
           <span ng-show="journalForm.$invalid && date==true">Date is required.</span>
         </span>
       </div>
       <div class="form-group col-xs-5">
         <div ng-include="'public/views/parkSelect.html'"></div>
-        <span style="color:red" ng-show="journalForm.notes.$invalid">
+        <span style="color:white" ng-show="journalForm.notes.$invalid">
           <span ng-show="journalForm.$invalid && park==true">Park is required.</span>
         </span>
       </div>
@@ -20,9 +20,9 @@
 
     <div class="row">
         <div class="form-group col-xs-10 col-xs-offset-1 journalNotes">
-          <label for="notes">Notes:</label>
-          <textarea type="text" class="form-control" rows="5" name="notes" ng-model="jc.journalEntry.notes" ng-focus="notes=true" ng-blur="notes=false" onkeyup="auto_grow(this)" required></textarea>
-          <span style="color:ghostwhite" ng-show="journalForm.notes.$invalid">
+          <label for="notes">Chronicle your adventures:</label>
+          <textarea placeholder="What did you do? What did you see?" type="text" class="form-control" rows="5" name="notes" ng-model="jc.journalEntry.notes" ng-focus="notes=true" ng-blur="notes=false" onkeyup="auto_grow(this)" required></textarea>
+          <span style="color:white" ng-show="journalForm.notes.$invalid">
             <span ng-show="journalForm.$invalid && notes==true">Journal entry is required.</span>
           </span>
           <button class="btn btn-primary" ng-click="jc.addJournalEntry(jc.journalEntry)" ng-disabled="journalForm.$invalid"><i class="fa fa-plus"></i></button>

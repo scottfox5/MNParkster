@@ -10,7 +10,7 @@
 </form>
 
 <div id="picDisplay" ng-repeat="picture in uploads | orderBy: 'created' : true ">
-  <img class="picFrame" ng-src="{{picture.file.location}}" />
+  <a href="#fullSize"><img class="picFrame" ng-src="{{picture.file.location}}"/></a>
   <div>{{picture.comment}}</div>
   <button class="btn btn-danger btn-sm" ng-click="pc.deleteImage(picture._id)"><i class="fa fa-trash"></i></button>
 </div>

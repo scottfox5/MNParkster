@@ -6,7 +6,8 @@
 #picDisplay {
   display: inline-block;
   border: .1px dotted gray;
-  background-color: #c0c5c9;
+  background-color: #9eb3c7;
+  padding: 5px;
 }
 
 .picFrame {
@@ -30,23 +31,6 @@
   margin-right: 10px;
 }
 
-
-/* attempt to allow thumbnails to be displayed in popups*/
-/*.thumbnail  {
-	position: relative;
+#fullSize {
+  margin-top: 120px;
 }
-
-.thumbnail span {
-  visibility: hidden;
-	position: absolute;
-}
-
-.thumbnail:hover span {
-	visibility: visible;
-
-}
-
-.popup {
-  margin-top: 100px;
-  max-height: 400px;
-}*/

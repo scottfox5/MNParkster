@@ -11,30 +11,6 @@
   width: auto;
 }
 
-/*#weatherTable {
-  margin: 50px auto 50px;
-}
-
-table, #weatherTable, #weatherTable th, #weatherTable td {
-  border: 1px solid black;
-}
-
-#weatherTable caption {
-  font-size: 1.5em;
-  color: black;
-}
-
-#weatherTable th {
-  text-align: center;
-  padding: 20px;
-  font-style: bold;
-  font-size: 1.2em;
-}
-
-#weatherTable td {
-  padding: 20px;
-}*/
-
 #parkMaps {
   margin-bottom: 100px
 }
@@ -49,6 +25,7 @@ table, #weatherTable, #weatherTable th, #weatherTable td {
   width: 220px;
   border: 2px solid black;
   transition: all 1s ease;
+  background-color: #9eb3c7;
 }
 
 .weatherBox:hover {

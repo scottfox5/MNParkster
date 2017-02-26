@@ -1,0 +1,3 @@
+<div id="fullSize" ng-repeat="picture in uploads | orderBy: 'created' : true ">
+  <a href="#fullSize"><img class="picFrameFS" ng-src="{{picture.file.location}}"/></a>
+</div>
