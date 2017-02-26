@@ -4,8 +4,8 @@ parkApp.controller('WeatherController', function($http){
 
   vm.searchWeather = function(location) {
     return $http.get("/weather/" + location).then(function(response) {
-      console.log('Location:', location)
-      console.log('Weather Forecast:', response.data.daily.data);
+      // console.log('Location:', location)
+      // console.log('Weather Forecast:', response.data.daily.data);
       vm.weather = response.data.daily.data;
 
       // var day0 = new Date();
@@ -38,7 +38,7 @@ parkApp.controller('WeatherController', function($http){
         var dayi = new Date();
         dayi.setDate(dayi.getDate() + i);
         vm.weather[i]["day"] = dayi;
-        console.log(dayi);
+        // console.log(dayi);
       }
 
       console.log(vm.weather[0]);

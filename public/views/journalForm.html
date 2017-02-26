@@ -19,9 +19,9 @@
     </div>
 
     <div class="row">
-        <div class="form-group col-xs-10 col-xs-offset-1">
+        <div class="form-group col-xs-10 col-xs-offset-1 journalNotes">
           <label for="notes">Notes:</label>
-          <textarea class="form-control" class="journalNotes" rows="5" name="notes" ng-model="jc.journalEntry.notes" ng-focus="notes=true" ng-blur="notes=false" onkeyup="auto_grow(this)" required></textarea>
+          <textarea type="text" class="form-control" rows="5" name="notes" ng-model="jc.journalEntry.notes" ng-focus="notes=true" ng-blur="notes=false" onkeyup="auto_grow(this)" required></textarea>
           <span style="color:ghostwhite" ng-show="journalForm.notes.$invalid">
             <span ng-show="journalForm.$invalid && notes==true">Journal entry is required.</span>
           </span>
