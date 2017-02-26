@@ -35,7 +35,7 @@ parkApp.controller('PhotoController', ['$scope', '$http', 'Upload', function($sc
             swal("Deleted!", "That image was weak anyway.", "success");
             $http.delete("/uploads/" + id)
             .then(function(){
-              getImages();
+            getImages();
             })
           } else {
             swal("Cancelled", "Your photo is safe :)", "error");

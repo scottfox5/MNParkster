@@ -1,28 +1,31 @@
 /* photo album styles*/
-#soon {
-  margin-top: 200px;
-}
-
-#picForm {
-  margin-top: 200px;
+#myPhotos {
+  margin-top: 120px;
 }
 
 #picDisplay {
   display: inline-block;
+  border: .1px dotted gray;
+  background-color: #c0c5c9;
 }
 
 .picFrame {
   max-height: 200px;
-  margin: 20px;
-  border: white 5px solid
-}
-
-.picFrame {
-  filter: blur(1px) sepia(20%);
+  margin: 10px;
+  border: white 5px solid;
+  filter: brightness(80%);
 }
 
 .picFrame:hover {
   filter: none;
+}
+
+.imageUpload {
+  margin: 40px;
+}
+
+.imageUpload span, img, input {
+  margin-right: 10px;
 }
 
 

@@ -8,9 +8,11 @@
   display: inline-block;
 }
 
+#journalSubmission button {
+  margin: 10px;
+}
+
 #myJournal {
-  /*display: block;*/
-  /*max-width: 600px;*/
   color: #797218;
   display: inline-block;
   margin-top: 100px;
@@ -20,6 +22,10 @@
 
 #myJournal h2 {
   padding: 40px;
+}
+
+#myJournal button {
+    margin: 10px;
 }
 
 #journalEntry {

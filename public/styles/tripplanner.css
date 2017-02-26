@@ -3,9 +3,25 @@
 }
 
 #weatherTable {
-  margin: 50px auto 50px
+  margin: 50px auto 50px;
+}
+
+table, #weatherTable, #weatherTable th, #weatherTable td {
+  border: 1px solid black;
 }
 
 #weatherTable caption {
   font-size: 1.5em;
+  color: black;
+}
+
+#weatherTable th {
+  text-align: center;
+  padding: 20px;
+  font-style: bold;
+  font-size: 1.2em;
+}
+
+#weatherTable td {
+  padding: 20px;
 }

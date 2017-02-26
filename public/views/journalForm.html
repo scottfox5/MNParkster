@@ -25,18 +25,17 @@
           <span style="color:ghostwhite" ng-show="journalForm.notes.$invalid">
             <span ng-show="journalForm.$invalid && notes==true">Journal entry is required.</span>
           </span>
-          <button ng-click="jc.addJournalEntry(jc.journalEntry)" ng-disabled="journalForm.$invalid">Submit</button>
+          <button class="btn btn-primary" ng-click="jc.addJournalEntry(jc.journalEntry)" ng-disabled="journalForm.$invalid"><i class="fa fa-plus"></i></button>
         </div>
     </div>
   </form>
 
-
-  <div class="row">
-    <button ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 800, height: 800}">Select Picture</button>
+  <div class="row imageUpload">
+    <button class="btn btn-primary" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 800, height: 800}">Select Picture</button>
     <span> {{file.$ngfName}} </span>
-    <img ngf-thumbnail="file || '/images/upload.svg'">
+    <img ngf-thumbnail="file || '/public/assets/upload.png'">
     <input type="text" ng-model="comment" placeholder="Add comment.. " class="u-full-width" />
-    <button type="submit" ng-click="submit()">Upload</button>
+    <button class="btn btn-primary" ng-click="submit()">Upload</button>
   </div>
 
 </section>
@@ -45,6 +44,5 @@
     text-align: center;
       background: url(/public/assets/wildriver.jpeg) no-repeat center center fixed;
       background-size: cover;
-    background-color: #5A754E;
   }
 </style>

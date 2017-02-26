@@ -5,6 +5,11 @@
   color: ghostwhite;
 }
 
+#parkCounter strong {
+  color: lightgray;
+  font-size: 1.2em
+}
+
 #checklist {
   margin: 100px;
   padding: 10px;
@@ -15,13 +20,13 @@
   color: ghostwhite;
 }
 
-th {
+#checklist th {
   text-align: center;
   border-bottom: 1px solid black;
   padding: 20px;
   font-style: bold;
 }
 
-td {
+#checklist td {
   padding: 20px;
 }

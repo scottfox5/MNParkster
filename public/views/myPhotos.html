@@ -1,13 +1,12 @@
+<h2 id="myPhotos">My Photos</h2>
 <form name="form" id="picForm" >
-    <div>
-      <div>
-          <button ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 800, height: 800}">Select Picture</button>
-          <span> {{file.$ngfName}} </span>
-          <img ngf-thumbnail="file || '/images/upload.svg'">
-      </div>
-        <input type="text" ng-model="comment" placeholder="Add comment.. " class="u-full-width" />
-        <button type="submit" ng-click="submit()">Upload</button>
-    </div>
+  <div class="row imageUpload">
+    <button class="btn btn-primary" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 800, height: 800}">Select Picture</button>
+    <span> {{file.$ngfName}} </span>
+    <img ngf-thumbnail="file || '/public/assets/upload.png'">
+    <input type="text" ng-model="comment" placeholder="Add comment.. " class="u-full-width" />
+    <button class="btn btn-primary" ng-click="submit()">Upload</button>
+  </div>
 </form>
 
 <div id="picDisplay" ng-repeat="picture in uploads | orderBy: 'created' : true ">
@@ -26,13 +25,8 @@
   </div>
 
 </div> -->
-
-
-
-
-
 <style>
   body {
-    background-color: #8B8D89;
+    background-color: #d6dbe0;
   }
 </style>
