@@ -1,8 +1,9 @@
-<div>
-  <h2 id="tripPlanner">Select A Park To Get Weather And Brochure</h2>
+<div id="tripPlanner">
+  <h2>Select A Park To Get Weather And Brochure</h2>
   <div ng-include="'public/views/parkSelectLL.html'"></div>
+  <img src="/public/assets/mnParks.jpg" />
 </div>
-<table id="weatherTable" class="table table-responsive table-bordered table-hover">
+<!-- <table id="weatherTable" class="table table-responsive table-hover">
   <caption class="text-center">Weather Forecast</caption>
   <thead>
     <tr>
@@ -17,14 +18,30 @@
   <tbody ng-repeat="wa in wc.weather">
     <tr>
       <td ng-model="wa.time">{{wa.day | date:'fullDate'}}</td>
-      <td ng-model="wa.icon">{{wa.icon}}</td>
+      <td ng-model="wa.icon"><i class="wi wi-{{wa.icon}}"></i></td>
       <td ng-model="wa.summary">{{wa.summary}}</td>
-      <td ng-model="wa.temperatureMax">{{wa.temperatureMax}}</td>
-      <td ng-model="wa.temperatureMin">{{wa.temperatureMin}}</td>
-      <td ng-model="wa.precipProbability">{{wa.precipProbability}}</td>
+      <td ng-model="wa.temperatureMax">{{wa.temperatureMax | number:0}}°F</td>
+      <td ng-model="wa.temperatureMin">{{wa.temperatureMin | number:0}}°F</td>
+      <td ng-model="wa.precipProbability">{{wa.precipProbability * 100 | number:0}}%</td>
     </tr>
   </tbody>
-</table>
+</table> -->
+
+  <h3>Weather Forecast</h3>
+  <div id="weatherTable" class="row" ng-repeat="wa in wc.weather">
+      <div class="col-xs-3 weatherBox">
+        <p ng-model="wa.day">{{wa.day | date:'fullDate'}}</p>
+        <p ng-model="wa.icon"><i class="wi wi-{{wa.icon}}"></i></p>
+        <p ng-model="wa.summary">{{wa.summary}}</p>
+        <p ng-model="wa.temperatureMax">High: {{wa.temperatureMax | number:0}}°F</p>
+        <p ng-model="wa.temperatureMin">Low: {{wa.temperatureMin | number:0}}°F</p>
+        <p ng-model="wa.precipProbability">Precipitation: {{wa.precipProbability * 100 | number:0}}%</p>
+      </div>
+  </div>
+
+
+
+
 <div id="parkMaps" ng-include="'public/views/parkMaps.html'"></div>
 <style>
   body {

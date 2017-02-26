@@ -2,7 +2,16 @@
   margin: 100px 0 40px;
 }
 
-#weatherTable {
+#tripPlanner h2, #tripPlanner div {
+  margin-bottom: 40px;
+}
+
+#tripPlanner img {
+  height: 800px;
+  width: auto;
+}
+
+/*#weatherTable {
   margin: 50px auto 50px;
 }
 
@@ -24,4 +33,19 @@ table, #weatherTable, #weatherTable th, #weatherTable td {
 
 #weatherTable td {
   padding: 20px;
+}*/
+
+#parkMaps {
+  margin-bottom: 100px
+}
+
+#weatherTable {
+  display: inline-block;
+}
+
+.weatherBox {
+  margin: 20px;
+  height: 220px;
+  width: 220px;
+  border: 2px solid black;
 }
