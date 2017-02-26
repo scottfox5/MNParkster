@@ -13,11 +13,13 @@
   max-height: 200px;
   margin: 10px;
   border: white 5px solid;
-  filter: brightness(80%);
+  filter: brightness(90%);
+  transition: all 1s ease;
 }
 
 .picFrame:hover {
   filter: none;
+  transform:scale(1.1);
 }
 
 .imageUpload {

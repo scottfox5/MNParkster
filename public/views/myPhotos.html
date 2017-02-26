@@ -1,11 +1,11 @@
 <h2 id="myPhotos">My Photos</h2>
 <form name="form" id="picForm" >
   <div class="row imageUpload">
-    <button class="btn btn-primary" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 800, height: 800}">Select Picture</button>
+    <button class="btn btn-primary" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 800, height: 800}"><i class="fa fa-search-plus"></i> Select Image</button>
     <span> {{file.$ngfName}} </span>
-    <img ngf-thumbnail="file || '/public/assets/upload.png'">
+    <img ngf-thumbnail="file || '/public/assets/upload1.png'">
     <input type="text" ng-model="comment" placeholder="Add comment.. " class="u-full-width" />
-    <button class="btn btn-primary" ng-click="submit()">Upload</button>
+    <button class="btn btn-primary" ng-click="submit()"><i class="fa fa-cloud-upload"></i> Upload</button>
   </div>
 </form>
 
@@ -15,16 +15,6 @@
   <button class="btn btn-danger btn-sm" ng-click="pc.deleteImage(picture._id)"><i class="fa fa-trash"></i></button>
 </div>
 
-<!-- attempt to allow thumbnails to be displayed in popup -->
-<!-- <div id="picDisplay" ng-repeat="picture in uploads | orderBy: 'created' : true ">
-
-  <div class="thumbnail">
-    <img  ng-src="{{picture.file.location}}" width="100px" height="100px">
-    <span><img class="popup center-block" ng-src="{{picture.file.location}}"><br> {{picture.comment}}</span>
-    <button class="btn btn-sm btn-warning" ng-click="pc.deleteImage(picture._id)">D</button>
-  </div>
-
-</div> -->
 <style>
   body {
     background-color: #d6dbe0;

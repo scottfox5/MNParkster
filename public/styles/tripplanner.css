@@ -44,16 +44,22 @@ table, #weatherTable, #weatherTable th, #weatherTable td {
 }
 
 .weatherBox {
-  margin: 20px;
-  height: 240px;
+  margin: 25px;
+  height: 250px;
   width: 220px;
   border: 2px solid black;
+  transition: all 1s ease;
 }
 
 .weatherBox:hover {
-  background-color: white;
+     transform:scale(1.1);
+     background-color: white;
 }
 
 .weatherBox p strong {
   font-size: 1.3em;
+}
+
+.wi {
+  font-size: 2.5em;
 }
