@@ -33,6 +33,11 @@ parkApp.service('JournalService', function ($http) {
     });
   };
 
-
+  // automatically resizes textareas on mouseover and keyup
 
 }); // end of journal service
+
+function auto_grow(element) {
+    element.style.height = "5px";
+    element.style.height = (element.scrollHeight)+"px";
+}

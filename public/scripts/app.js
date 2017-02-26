@@ -27,6 +27,11 @@ var parkApp = angular.module('parkJournalApp', ['ngRoute', 'ngFileUpload']);
         controller: "PhotoController",
         controllerAs: 'pc'
       })
+      .when('/fullSize', {
+        templateUrl: '/public/views/fullSize.html',
+        controller: "PhotoController",
+        controllerAs: 'pc'
+      })
       .when('/tripPlanner', {
         templateUrl: '/public/views/tripPlanner.html',
         controller: "WeatherController",
@@ -39,9 +44,3 @@ var parkApp = angular.module('parkJournalApp', ['ngRoute', 'ngFileUpload']);
 
 
 ]);
-
-// automatically resizes textareas on mouseover and keyup
-function auto_grow(element) {
-    element.style.height = "5px";
-    element.style.height = (element.scrollHeight)+"px";
-}

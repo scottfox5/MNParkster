@@ -8,7 +8,7 @@ parkApp.controller('PhotoController', ['$scope', '$http', 'Upload', function($sc
     $scope.userId = '';
     $scope.journalId = '';
 
-    //loads any already uploaded images
+    //loads user images when page loads
     getImages();
 
 //loads images already uploaded
@@ -23,7 +23,7 @@ parkApp.controller('PhotoController', ['$scope', '$http', 'Upload', function($sc
     vm.deleteImage = function(id){
       swal({
         title: "Are you sure?",
-        text: "You will not be able to recover this photo!",
+        text: "You will not be able to recover this image.",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!",
@@ -32,13 +32,13 @@ parkApp.controller('PhotoController', ['$scope', '$http', 'Upload', function($sc
         closeOnCancel: false },
         function(isConfirm){
           if (isConfirm) {
-            swal("Deleted!", "That image was weak anyway.", "success");
+            swal("Deleted!", "Image has been deleted.", "success");
             $http.delete("/uploads/" + id)
             .then(function(){
             getImages();
             })
           } else {
-            swal("Cancelled", "Your photo is safe :)", "error");
+            swal("Cancelled", "Your photo is safe.", "error");
           }// end else
         });// end swal alert
       };// end deleteImage
@@ -47,14 +47,15 @@ parkApp.controller('PhotoController', ['$scope', '$http', 'Upload', function($sc
     $scope.submit = function() {
         if ($scope.form.file.$valid && $scope.file) {
             $scope.upload($scope.file);
-            console.log('file', $scope.file);
+            $scope.file = {}; // clears the file display after submission
+            $scope.comment = ''; // clears the comment field after submission
+            // console.log('file', $scope.file);
         }
         else {
         }
-    };
+    }; // end of submit
 
     $scope.upload = function(file) {
-
         Upload.upload({
             url: '/uploads',
             data: {
@@ -74,8 +75,6 @@ parkApp.controller('PhotoController', ['$scope', '$http', 'Upload', function($sc
             console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
 
         });
-    };
+    }; // end of upload
 
-
-
-}]);
+}]); // end of photoController
