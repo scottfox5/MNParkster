@@ -1,0 +1,11 @@
+#tripPlanner {
+  margin: 100px 0 40px;
+}
+
+#weatherTable {
+  margin: 50px auto 50px
+}
+
+#weatherTable caption {
+  font-size: 1.5em;
+}

@@ -16,7 +16,7 @@ var database = require('./utils/database');
 require('dotenv').load();//loads environment variables locally
 var uploads = require('./routes/uploads');
 
-
+var weather = require('./routes/weather')
 
 /** ---------- EXPRESS APP CONFIG ---------- **/
 var app = express();
@@ -57,6 +57,7 @@ app.use('/auth', auth);
 app.use('/private', isLoggedIn, private);
 app.use('/', index);
 app.use('/uploads', uploads);
+app.use('/weather', weather)
 /** ---------- SERVER START ---------- **/
 app.set('port', process.env.PORT || 5555);
 app.listen(app.get('port'), function() {

@@ -27,6 +27,11 @@ var parkApp = angular.module('parkJournalApp', ['ngRoute', 'ngFileUpload']);
         controller: "PhotoController",
         controllerAs: 'pc'
       })
+      .when('/tripPlanner', {
+        templateUrl: '/public/views/tripPlanner.html',
+        controller: "WeatherController",
+        controllerAs: 'wc'
+      })
       .otherwise({
         redirectTo: 'login',
       });

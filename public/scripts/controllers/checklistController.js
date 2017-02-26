@@ -4,7 +4,7 @@ var vm = this;
 
   vm.getParks = function(){ //
       return $http.get("/private/checklist").then(function(response) {
-        // console.log('Checklist Data:', response.data)
+        console.log('Checklist Data:', response.data)
         return vm.checklist = response.data;
       }).catch(function(err) {
         console.log("Error getting checklist", err);

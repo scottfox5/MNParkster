@@ -17,13 +17,13 @@
   border: white 5px solid
 }
 
-/*img {
+.picFrame {
   filter: blur(1px) sepia(20%);
 }
 
-img:hover {
+.picFrame:hover {
   filter: none;
-}*/
+}
 
 
 /* attempt to allow thumbnails to be displayed in popups*/

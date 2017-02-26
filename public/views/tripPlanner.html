@@ -1,0 +1,28 @@
+<div>
+  <h2 id="tripPlanner">Select A Park To Get Weather And Brochure</h2>
+  <div ng-include="'public/views/parkSelectLL.html'"></div>
+</div>
+<table id="weatherTable" class="table-responsive table-bordered table-hover">
+  <caption class="text-center">Weather Forecast</caption>
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Icon</th>
+      <th>Summary</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Chance of Precipitation</th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="wa in wc.weather">
+    <tr>
+      <td ng-model="wa.time">{{wa.day | date:'fullDate'}}</td>
+      <td ng-model="wa.icon">{{wa.icon}}</td>
+      <td ng-model="wa.summary">{{wa.summary}}</td>
+      <td ng-model="wa.temperatureMax">{{wa.temperatureMax}}</td>
+      <td ng-model="wa.temperatureMin">{{wa.temperatureMin}}</td>
+      <td ng-model="wa.precipProbability">{{wa.precipProbability}}</td>
+    </tr>
+  </tbody>
+</table>
+<div id="parkMaps" ng-include="'public/views/parkMaps.html'"></div>
