@@ -33,7 +33,7 @@ parkApp.controller('WeatherController', function($http){
       // vm.weather[7]["day"] = day7;
 
 // for loop to add date to weather forecast objects
-// it works but shows errors in the console
+// it works but shows error in the console that cannot update property day of undefined
       for (var i = 0; i <= 8; i++){
         var dayi = new Date();
         dayi.setDate(dayi.getDate() + i);

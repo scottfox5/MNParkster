@@ -25,7 +25,7 @@
           <span style="color:white" ng-show="journalForm.notes.$invalid">
             <span ng-show="journalForm.$invalid && notes==true">Journal entry is required.</span>
           </span>
-          <button class="btn btn-primary" ng-click="jc.addJournalEntry(jc.journalEntry)" ng-disabled="journalForm.$invalid"><i class="fa fa-plus"></i></button>
+          <button data-tooltip="Add Journal Entry" class="btn btn-primary tooltip-right" ng-click="jc.addJournalEntry(jc.journalEntry)" ng-disabled="journalForm.$invalid"><i class="fa fa-plus"></i></button>
         </div>
     </div>
   </form>

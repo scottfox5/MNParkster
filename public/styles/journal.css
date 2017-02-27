@@ -31,6 +31,8 @@
 
 #myJournal button {
     margin: 10px;
+    background-color: #594256;
+    border: none;
 }
 
 #journalEntry {

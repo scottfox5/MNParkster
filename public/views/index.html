@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>MN Parks</title>
+  <title>MN Parkster</title>
   <!-- third-party javascript -->
   <script src="/public/vendors/angular.min.js"></script>
   <script src="/public/vendors/angular-route.min.js"></script>
@@ -35,15 +35,16 @@
   <link rel="stylesheet" type="text/css" href="/public/styles/checklist.css" />
   <link rel="stylesheet" type="text/css" href="/public/styles/photos.css" />
   <link rel="stylesheet" type="text/css" href="/public/styles/tripplanner.css" />
+  <link rel="stylesheet" type="text/css" href="/public/styles/tooltip.css" />
+  <!-- favicon -->
   <link rel="shortcut icon" href="/public/assets/hike1.jpg" type="image/x-icon">
-
 </head>
 
 <body class="container" ng-app="parkJournalApp">
   <header ng-controller="NavController as nc">
     <!-- navbar to be hidden if not logged in, then displayed on all other pages  -->
     <div ng-include="'public/views/navbar.html'"></div>
-    <!-- Show message user could not login/logout -->
+    <!-- Show message if user could not login/logout -->
     <section id="message" class="nc.message.type" ng-show="nc.message.text">
       {{nc.message.text}}
     </section>

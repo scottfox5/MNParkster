@@ -23,8 +23,8 @@
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <button class="btn btn-success btn-sm" ng-click="jc.updateJournalEntry(journalEntry._id, jc.journalList[$index])"><i class="fa fa-pencil"></i></button>
-        <button class="btn btn-danger btn-sm" ng-click="jc.deleteJournalEntry(journalEntry._id, journalEntry.park)"><i class="fa fa-trash"></i></button>
+        <button data-tooltip="Update Journal Entry" class="btn btn-success btn-sm tooltip-left" ng-click="jc.updateJournalEntry(journalEntry._id, jc.journalList[$index])"><i class="fa fa-pencil"></i></button>
+        <button data-tooltip="Delete Journal Entry" class="btn btn-danger btn-sm tooltip-right" ng-click="jc.deleteJournalEntry(journalEntry._id, journalEntry.park)"><i class="fa fa-trash"></i></button>
       </div>
     </div>
   </div>

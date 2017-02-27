@@ -31,7 +31,7 @@ vm.data = '';
     .then(function(){
       // console.log('Updated Journal Entry', data);
       vm.getUserJournal();
-      swal("Groovy", "You succesfully updated your journal entry.", "success")
+      swal("Great", "You succesfully updated your journal entry.", "success")
     }).catch(function(err){
       console.log('error updating journal entry', err)
     });
@@ -49,13 +49,13 @@ vm.data = '';
       closeOnCancel: false },
       function(isConfirm){
         if (isConfirm) {
-          swal("Deleted!", "That trip to "+ park +" State Park sucked anyway.", "success");
+          swal("Deleted!", "You have succesfully deleted your entry for "+ park +" State Park.", "success");
           JournalService.deleteJournalEntry(id)
           .then(function(response){
             vm.getUserJournal();
           });// end http delete call
         } else {
-          swal("Cancelled", "Your journal entry is safe :)", "error");
+          swal("Cancelled", "Your journal entry is safe.", "error");
         }// end else
       });// end swal alert
     };// end deleteJournalEntry

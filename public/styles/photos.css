@@ -11,7 +11,7 @@
 }
 
 .picFrame {
-  max-height: 200px;
+  max-height: 300px;
   margin: 10px;
   border: white 5px solid;
   filter: brightness(90%);
@@ -20,7 +20,7 @@
 
 .picFrame:hover {
   filter: none;
-  transform:scale(1.1);
+  transform:scale(1.2);
 }
 
 .imageUpload {
@@ -33,4 +33,10 @@
 
 #fullSize {
   margin-top: 120px;
+}
+
+#picDisplay button {
+  background-color: #6c8caa;
+  border: none;
+  margin: 5px;
 }
