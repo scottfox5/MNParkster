@@ -14,10 +14,10 @@ router.get('/', function (req, res) {
 }); // end of get
 
 router.post('/', function (req, res) {
-  // console.log('post req.body:', req.body);
+  console.log('post req.body:', req.body);
   var userJournalEntry = req.body;
   var user = req.user;
-  // console.log('posting user journal:', userJournalEntry, "user:", user);
+  console.log('posting user journal:', userJournalEntry, "user:", user);
   UserJournal.findByIdAndUpdate(
           user._id,
           {$push: {"journal": userJournalEntry}},
