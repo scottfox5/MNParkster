@@ -9,8 +9,6 @@ node_modules
 # Config
 config/auth.js
 
+*.env
 
-
-.env
-
-chxlst.txt
+*.csv
