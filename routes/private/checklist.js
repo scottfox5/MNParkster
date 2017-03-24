@@ -4,25 +4,6 @@ var UserJournal = require('../../models/user');
 
 router.get('/', function (req, res) {
 
-  QuoteBook.find({}, function (err, data) {
-    if (data.length == 0){
-      res.sendStatus(500)
-      return
-    } else {
-      var quoteArray = data[0].quotes;
-      // selecting random item from array
-      var quote = quoteArray[Math.floor(Math.random()*quoteArray.length)];
-      console.log('Quote:', quote)
-      res.send(quote);
-      return
-    }
-    if (err) {
-      res.sendStatus(500);
-      return;
-    }
-
-  });
-
   UserJournal.find({"_id" : req.user._id}, function (err, data) {
     if (data.length == 0){
       res.sendStatus(500)
