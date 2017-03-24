@@ -7,6 +7,7 @@ This is a MEAN stack web based application for users to journal their experience
 ##Date: 25 March 2017
 
 ###Technology used:
+
 -HTML5
 -CSS3
 -Bootstrap
