@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
       var quoteArray = data[0].quotes;
       // selecting random item from array
       var quote = quoteArray[Math.floor(Math.random()*quoteArray.length)];
-      // console.log('Quote:', quote)
+      console.log('Quote:', quote)
       res.send(quote);
       return
     }
@@ -28,13 +28,13 @@ router.get('/', function (req, res) {
       res.sendStatus(500)
       return
     } else {
-      console.log('User Data:' data)
+      console.log('User Data:', data)
       var journalData = data[0].journal;
 
       // converting park propery of array of journal entry objects into array of parks
       var parksArray = journalData.map(function(item) { return item["park"]; });
       parksArray.sort();
-
+      console.log('Parks Array:', parksArray)
       // counting number of each item in parks array and converting to two arrays: one of distinct parks, one of number of visits to each park
       var  count = {};
       parksArray.forEach(function(i) { count[i] = (count[i]||0)+1;  }); // converts array of items to object with distinct item and number of occurences in array
@@ -44,7 +44,7 @@ router.get('/', function (req, res) {
 
       // converting two arrays into array of objects with properties of parks and visits
       var checklist = parksVisited.map(function(e,i){return{park:e,visits:parkVisits[i]}});
-      // console.log('Checklist Array of Objects w/ park/visits:', checklist)
+      console.log('Checklist Array of Objects w/ park/visits:', checklist)
       res.send(checklist);
       return
     }
