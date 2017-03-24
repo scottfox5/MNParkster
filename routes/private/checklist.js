@@ -27,14 +27,14 @@ router.get('/', function (req, res) {
       var checklist = parksVisited.map(function(e,i){return{park:e,visits:parkVisits[i]}});
 
       console.log('Checklist Array of Objects w/ park/visits:', checklist)
-      res.send(checklist);
+
 
     if (err) {
 
       res.sendStatus(500);
       return;
     }
-
+    res.send(checklist);
   }); // end of UserJournal.find
 
 }); // end of get

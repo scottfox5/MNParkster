@@ -22,5 +22,7 @@ This is a MEAN stack web based application for users to journal their experience
 -Dark Sky Weather API
 
 ###Setup:
+-clone repo
 -npm install
+-change name of of file in config folder to auth.js
 -run application on localhost:5555
