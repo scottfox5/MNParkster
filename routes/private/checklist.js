@@ -63,10 +63,15 @@ router.get('/', function (req, res) {
     // counting number of each item in parks array and converting to two arrays: one of distinct parks, one of number of visits to each park
     var  count = {};
     parksArray.forEach(function(i) { count[i] = (count[i]||0)+1;  }); // converts array of items to object with distinct item and number of occurences in array
-    console.log('List of unique parks and total visits:', count)
+    console.log('List of unique parks and total visits:', count);
+
+    var countDuplicate = count;
+    console.log("Count Duplicate:", countDuplicate)
+
     var parksVisited = Object.keys(count); // puts keys into array
-    console.log("Parks Visited:", parksVisited)
-    var parkVisits = Object.values(count); // puts values into array
+    console.log("Parks Visited:", parksVisited);
+
+    var parkVisits = Object.values(countDuplicate); // puts values into array
     console.log("Park Visits:", parkVisits);
 
     // converting two arrays into array of objects with properties of parks and visits
