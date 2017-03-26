@@ -10,6 +10,8 @@ var QuoteBook = require('../../models/quotes');
         return
       } else {
         var quoteArray = data[0].quotes;
+        console.log("Quote Array:", quoteArray);
+        console.log("data[1].quotes:", data[1].quotes);
         // selecting random item from array
         var quote = quoteArray[Math.floor(Math.random()*quoteArray.length)];
         console.log('Quote:', quote)
