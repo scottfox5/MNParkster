@@ -4,6 +4,7 @@ var QuoteBook = require('../../models/quotes');
 
   router.get('/', function (req, res) {
     QuoteBook.find({}, function (err, data) {
+      console.log("Quote Data:", data)
       if (data.length == 0){
         res.sendStatus(500)
         return
@@ -11,7 +12,7 @@ var QuoteBook = require('../../models/quotes');
         var quoteArray = data[0].quotes;
         // selecting random item from array
         var quote = quoteArray[Math.floor(Math.random()*quoteArray.length)];
-        // console.log('Quote:', quote)
+        console.log('Quote:', quote)
         res.send(quote);
         return
       }
