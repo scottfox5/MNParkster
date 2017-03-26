@@ -24,5 +24,7 @@ This is a MEAN stack web based application for users to journal their experience
 ###Setup:
 -clone repo
 -npm install
--change name of of file in config folder to auth.js
+-change names of the files in config folder to auth.js and database.js
+-enter proper values in auth.js and database.js
+-add .env file with proper value for AWS S3 image hosting
 -run application on localhost:5555
