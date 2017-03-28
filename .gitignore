@@ -10,6 +10,6 @@ node_modules
 config/auth.js
 config/database.js
 
-*.env
+.env
 
 *.csv
