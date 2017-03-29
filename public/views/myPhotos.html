@@ -3,7 +3,7 @@
   <div class="row imageUpload">
     <button class="btn btn-primary" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 800, height: 800}"><i class="fa fa-search-plus"></i> Select Image</button>
     <span> {{file.$ngfName}} </span>
-    <img ngf-thumbnail="file || '/public/assets/upload1.png'">
+    <img ngf-thumbnail="file || '/public/assets/images/upload1.png'">
     <input type="text" ng-model="comment" placeholder="Add details... "/>
     <button class="btn btn-primary" ng-click="submit()"><i class="fa fa-cloud-upload"></i> Upload</button>
   </div>
