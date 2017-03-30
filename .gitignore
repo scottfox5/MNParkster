@@ -7,8 +7,8 @@ node_modules
 .DS_Store
 
 # Config
-config/auth.js
-config/database.js
+Xconfig/auth.js
+Xconfig/database.js
 
 .env
 
