@@ -21,7 +21,7 @@ vm.data = '';
     }).catch(function(err){
       console.log('error adding journal entry', err)
     });
-    swal("Dope!", journalEntry.park+" State Park sounds like paradise!", "success")
+    swal("Awesome!", journalEntry.park+" State Park sounds like paradise!", "success")
     vm.journalEntry = {};
     vm.getUserJournal();
   }; // end of addJournalEntry
